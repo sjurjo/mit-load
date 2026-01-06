@@ -1,0 +1,17 @@
+---
+title: "Oppakning"
+author: "Sjur Fortun Øfsteng"
+date: 'Updated: `r Sys.Date()`'
+biblio-style: apalike
+description: Denne læringsmodulen gir deg en innføring i hvordan oppakning påvirker din fysiologi og militære prestasjon
+fontsize: 11pt
+github-repo: sjurjo/mit-load
+#cover-image: resources/cover.png
+#bibliography: 
+
+
+---
+
+# Introduksjon
+
+Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjon. Endring av oppakning i kg, hvordan terrenget er vil påvirke ditt energiforbruk og videre fysiske prestasjon over tid [@RN2391].

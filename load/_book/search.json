@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Oppakning og forflyttning",
+    "section": "",
+    "text": "1 Introduksjon\nDenne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjon. Endring av oppakning i kg, hvordan terrenget er vil påvirke ditt energiforbruk og videre fysiske prestasjon over tid (Broman and Woo 2018).\n\n\n\nBroman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” Journal Article. The American Statistician 72 (1): 2–10. https://doi.org/10.1080/00031305.2017.1375989.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Oppakning</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "2  Writ",
+    "section": "",
+    "text": "3 Arbeid med dine data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writ</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#making-sense-of-data-transferable-skills-and-teamwork",
+    "href": "01-intro.html#making-sense-of-data-transferable-skills-and-teamwork",
+    "title": "2  Writ",
+    "section": "3.1 Making sense of data, transferable skills and teamwork",
+    "text": "3.1 Making sense of data, transferable skills and teamwork",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writ</span>"
+    ]
+  },
+  {
+    "objectID": "01-intro.html#fyll-inn",
+    "href": "01-intro.html#fyll-inn",
+    "title": "2  Writ",
+    "section": "3.1 Fyll inn",
+    "text": "3.1 Fyll inn\n\n\n$weight\n[1] 50 50 70 70 90 90\n\n$load\n[1] 25 38 25 38 25 38\n\n$terrain\n[1] 1.1\n\n$velocity\n[1] 2.2\n\n$grade\n[1] 0\n\n\n[1]  711.4500  879.4256  887.9047 1031.1419 1071.1369 1202.8455\n\n\n  weight load terrain velocity grade    result\n1     50   25     1.1      2.2     0  711.4500\n2     50   38     1.1      2.2     0  879.4256\n3     70   25     1.1      2.2     0  887.9047\n4     70   38     1.1      2.2     0 1031.1419\n5     90   25     1.1      2.2     0 1071.1369\n6     90   38     1.1      2.2     0 1202.8455\n\n\n[1] 0.2039016 0.2520434 0.1817668 0.2110895 0.1705488 0.1915197\n\n\n\n\n\nweight\nload\nterrain\nvelocity\ngrade\nresult\nresult_2\n\n\n\n\n50\n25\n1.1\n2.2\n0\n711.4500\n0.2039016\n\n\n50\n38\n1.1\n2.2\n0\n879.4256\n0.2520434\n\n\n70\n25\n1.1\n2.2\n0\n887.9047\n0.1817668\n\n\n70\n38\n1.1\n2.2\n0\n1031.1419\n0.2110895\n\n\n90\n25\n1.1\n2.2\n0\n1071.1369\n0.1705488\n\n\n90\n38\n1.1\n2.2\n0\n1202.8455\n0.1915197",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Writ</span>"
+    ]
+  }
+]

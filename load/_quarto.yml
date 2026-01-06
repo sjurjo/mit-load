@@ -1,0 +1,32 @@
+project:
+  type: book
+  title: "load"
+  
+
+book:
+  title: "Oppakning og forflyttning"
+  author: "Sjur Fortun Øfsteng"
+  date: "2026-01-01"
+  search: true
+  repo-url: https://github.com/sjurjo/mit-load
+  repo-branch: master
+  repo-actions: [edit, issue, source]
+  #downloads: [epub]
+  chapters:
+  - index.qmd
+  - 01-intro.qmd
+  - 02-data.qmd
+  - 99-refs.qmd
+   
+
+bibliography: resources/bib.bib
+format:
+  html:
+    reference-location: margin
+    citation-location: margin
+    footnotes-hover: false
+    theme:
+      light: flatly
+      dark: darkly
+  #epub:
+  #  cover-image: resources/cover.png
