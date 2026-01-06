@@ -2,9 +2,8 @@ project:
   type: book
   title: "load"
   
-
 book:
-  title: "Oppakning og forflyttning"
+  title: "Forflyttning med oppakning"
   author: "Sjur Fortun Øfsteng"
   date: "2026-01-01"
   search: true
@@ -15,10 +14,13 @@ book:
   chapters:
   - index.qmd
   - 01-intro.qmd
-  - 02-data.qmd
+  - part: "Data visulaization"
+    chapters: 
+    - 02-data.qmd
   - 99-refs.qmd
    
 
+brand: _brand.yml
 bibliography: resources/bib.bib
 format:
   html:
@@ -29,4 +31,4 @@ format:
       light: flatly
       dark: darkly
   #epub:
-  #  cover-image: resources/cover.png
+   # cover-image: resources/cover.png

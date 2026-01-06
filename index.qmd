@@ -1,0 +1,17 @@
+---
+title: "Forflytning med oppakning"
+author: "Sjur Fortun Øfsteng"
+#date: last-modified
+biblio-style: apalike
+description: Denne læringsmodulen gir deg en innføring i hvordan forflyttning med oppakning påvirker din fysiologi og militære prestasjon
+fontsize: 11pt
+github-repo: sjurjo/mit-load
+cover-image: resources/civil.png
+#bibliography: 
+
+
+---
+
+# Introduksjon
+
+Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvordan terrenget du beveger deg er og høydemeter er vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018].

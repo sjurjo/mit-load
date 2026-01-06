@@ -8,6 +8,8 @@ editor_options:
 
 # Arbeid med dine data
 
+- Pandolf's equation: energy expenditure of loaded marches is calculated with the following equation:
+
 ## Fyll inn
 
 ```{r d}
