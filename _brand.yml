@@ -7,7 +7,7 @@ color:
   primary: black
 
 logo: 
-  medium: logo.png
+  medium: resources/FHS_3_1.png
 
 typography:
   fonts:
