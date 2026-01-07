@@ -5,33 +5,80 @@ editor_options:
 ---
 
 
+# Energiforbruk
 
-# Arbeid med dine data
+## Eksempel på forflytning med ulik oppakningd
 
-- Pandolf's equation: energy expenditure of loaded marches is calculated with the following equation:
+For å finne ut hvor mye oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier. 
 
-## Fyll inn
 
-```{r d}
-#| message: false
-#| warning: false
-#| echo: false
+- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.
+
+
+
+- Pandolf's formel: energiforbruk ved forlfytning med oppakning er kalkulert med folgende formel:
+
+
+$$M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)$$
+
+hvor $\text{M}_w$ = energi kostnad ved marsjering (watt), $\text{W}$ = kroppsvekt i kg, $\text{L}$ = oppakning i kg, $\text{T}$ = terreng faktor, $\text{V}$ = hastighet/marsj hastighet (m/s), $\text{G}$ = grader/helning i %.  
+  
+I @tbl-energi har jeg lagt inn personer (ID) med ulik kroppsvekt og oppakning. Terreng faktor, hastighet og helning er konstante mellom personene.
+
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: tbl-data
+#| tbl-cap: Tabell med variabler for utregning av energiforbruk
 
 library(tidyverse)
 
 # From the article 
 
+df <- data.frame(fp= c("1", "1", "2", "2","3","3"),
+                 body.weight =c('50','50', '70','70', '90','90'),
+                 load=c(25, 38),
+                 terrain="1.1",
+                 velocity="1.2",
+                 grade="0")
+
+
+kableExtra::kable(df,
+                  align = c("l", "c"),
+                  col.names = c('ID',
+                                'Kroppsvekt (kg)', 
+                                'Oppakning (kg)', 
+                                'Terreng faktor', 
+                                'Hastighet (m/s)', 
+                                'Helning')) |> 
+    kableExtra::add_footnote(
+    escape = FALSE,
+    label = "Terreng faktor: 1.1 corresponding to *dirt road* on a weighting scale that goes from 1.0 for the black topping road to 4.1 for soft snow of 35 cm [@colosio_2018].",
+notation = "alphabet",
+threeparttable = FALSE)
+```
+
+
+I @tbl-energi har jeg kalkulert energiforbruket med Pandolf's formel. Formelen kalkulerer energiforbruket i *watt* for så å legge inn en faktor for å konvergere det til *Kcal*. Vi får da energiforbruket til personen i *Kcal per minutt*.
+
+Hvordan tolker vi disse dataene?
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: tbl-energi
+#| tbl-cap: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+
+library(tidyverse)
+
+
+## Dette skriptet regner ut energiforbruk per min (kcal per minutt)
+
 # 10.1136/jramc-2017-000887
 
 my_list <- list(
   weight = c(50, 50, 70, 70, 90, 90),
-  load = c(25, 38, 25, 38, 25, 38),
+  load = c(25, 35, 25, 35, 25, 35),
   terrain= c(1.1),
-  velocity = 2.2,
+  velocity = 1.2,
   grade = 0)
-
-my_list
-
 
 # Extract constants
 w <- my_list$weight
@@ -42,7 +89,7 @@ g <- my_list$grade
 # Prepare result vector
 result <- numeric(length(c(my_list$load)))
 
-# For loop over weight
+# For loop over different load and weight
 for (i in seq_along(c(my_list$load & my_list$weight))) {
   l <- my_list$load[i]
   w <- my_list$weight[i]
@@ -54,18 +101,109 @@ for (i in seq_along(c(my_list$load & my_list$weight))) {
 }
 
 # View results
-result
 
 my_list$result <- result
 
 r <- data.frame(my_list)
 
-r
+
+result_2 <- numeric(length(my_list$result))
+
+# For loop over weight body mass
+## Hva skjer når vi kontrollerer for kroppsvekt, w
+## Per time, * 60 min
+
+for (i in seq_along(my_list$result)) {
+  r <- my_list$result[i]
+  w <- my_list$weight[i]
+  
+  result_2[i] <- r * 0.01433
+  
+}
+
+
+my_list$result_2 <- result_2
+
+df <-  data.frame(my_list) |> 
+  mutate(across(c(result, result_2), ~ round(.x, 3))) |> 
+  mutate(fp = c("1","1", "2","2","3","3")) |> 
+  dplyr::select(fp, weight:result_2)
+
+kableExtra::kable(df,
+                  col.names = c('ID',
+                                'Kroppsvekt (kg)', 
+                                'Oppakning (kg)', 
+                                'Terreng faktor', 
+                                'Hastighet (m/s)', 
+                                'Helning', 
+                                "Watt", 
+                                "Kcal / min")) |> 
+  kableExtra::add_footnote(
+    escape = FALSE,
+    label = "Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \\\\",
+notation = "alphabet",
+threeparttable = TRUE
+)
+
+```
+
+- MEN, hva skjer når vi kontrollerer for personers kroppsvekt?
+- Hvem bruker mest energi med å forflytte seg med oppakning? Hvem forbruker mest energi med å forflytte seg egentlig?
+
+I @tbl-energi2 har jeg lagt inn kroppsvekt og kontrollert for dette i utregningen.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: tbl-energi2
+#| tbl-cap: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+
+library(tidyverse)
+
+
+## Dette skriptet kalkulerer energiforbruket per kg per min
+
+
+# 10.1136/jramc-2017-000887
+
+my_list <- list(
+  weight = c(50, 50, 70, 70, 90, 90),
+  load = c(25, 35, 25, 35, 25, 35),
+  terrain= c(1.1),
+  velocity = 1.2,
+  grade = 0)
+
+# Extract constants
+w <- my_list$weight
+t <- my_list$terrain
+v <- my_list$velocity
+g <- my_list$grade
+
+# Prepare result vector
+result <- numeric(length(c(my_list$load)))
+
+# For loop over different load and weight
+for (i in seq_along(c(my_list$load & my_list$weight))) {
+  l <- my_list$load[i]
+  w <- my_list$weight[i]
+  
+  result[i] <- 1.5 * w +
+    2.0 * (w + l) * (l / w)^2 +
+    t * (w + l) * (1.5 * v^2 + 0.35 * v * g) 
+  
+}
+
+# View results
+
+my_list$result <- result
+
+r <- data.frame(my_list)
 
 
 result_2 <- numeric(length(my_list$result))
 
-# For loop over weight
+# For loop over weight body mass
+## Hva skjer når vi kontrollerer for kroppsvekt, w
+## Per time, * 60 min
+
 for (i in seq_along(my_list$result)) {
   r <- my_list$result[i]
   w <- my_list$weight[i]
@@ -74,16 +212,29 @@ for (i in seq_along(my_list$result)) {
   
 }
 
-result_2
+
 my_list$result_2 <- result_2
 
-df <-  data.frame(my_list)
+df <-  data.frame(my_list) |> 
+  mutate(across(c(result, result_2), ~ round(.x, 3))) |> 
+  mutate(fp = c("1","1", "2","2","3","3")) |> 
+  dplyr::select(fp, weight:result_2)
 
-
-
-kableExtra::kable(df)
-
-
+kableExtra::kable(df,
+                  col.names = c('ID',
+                                'Kroppsvekt (kg)', 
+                                'Oppakning (kg)', 
+                                'Terreng faktor', 
+                                'Hastighet (m/s)', 
+                                'Helning', 
+                                "Watt", 
+                                "Kcal / kg / min")) |> 
+  kableExtra::add_footnote(
+    escape = FALSE,
+    label = "Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \\\\",
+notation = "alphabet",
+threeparttable = TRUE
+)
 
 
 ### Pandolfs equations metabolic cost of walking (watts)
@@ -125,11 +276,96 @@ kableExtra::kable(df)
 #kcal_kg
 #kcal
 
+```
 
 
+I @tbl-energi3 er energiforbruk per time kalkulert.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+#| label: tbl-energi3
+#| tbl-cap: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+
+library(tidyverse)
 
 
+## Dette skriptet kalkulerer energiforbruket per kg per min + utregning per 60 min
 
+
+# 10.1136/jramc-2017-000887
+
+my_list <- list(
+  weight = c(50, 50, 70, 70, 90, 90),
+  load = c(25, 35, 25, 35, 25, 35),
+  terrain= c(1.1),
+  velocity = 1.2,
+  grade = 0)
+
+# Extract constants
+w <- my_list$weight
+t <- my_list$terrain
+v <- my_list$velocity
+g <- my_list$grade
+
+# Prepare result vector
+result <- numeric(length(c(my_list$load)))
+
+# For loop over different load and weight
+for (i in seq_along(c(my_list$load & my_list$weight))) {
+  l <- my_list$load[i]
+  w <- my_list$weight[i]
+  
+  result[i] <- 1.5 * w +
+    2.0 * (w + l) * (l / w)^2 +
+    t * (w + l) * (1.5 * v^2 + 0.35 * v * g) 
+  
+}
+
+# View results
+
+my_list$result <- result
+
+r <- data.frame(my_list)
+
+
+result_2 <- numeric(length(my_list$result))
+
+# For loop over weight body mass
+## Hva skjer når vi kontrollerer for kroppsvekt, w
+## Per time, * 60 min
+
+for (i in seq_along(my_list$result)) {
+  r <- my_list$result[i]
+  w <- my_list$weight[i]
+  
+  result_2[i] <- r * 0.01433 / w * 60
+  
+}
+
+
+my_list$result_2 <- result_2
+
+df <-  data.frame(my_list) |> 
+  mutate(across(c(result, result_2), ~ round(.x, 3))) |> 
+  mutate(fp = c("1","1", "2","2","3","3")) |> 
+  dplyr::select(fp, weight:result_2)
+
+kableExtra::kable(df,
+                  col.names = c('ID',
+                                'Kroppsvekt (kg)', 
+                                'Oppakning (kg)', 
+                                'Terreng faktor', 
+                                'Hastighet (m/s)', 
+                                'Helning', 
+                                "Watt", 
+                                "Kcal / kg / time")) |> 
+  kableExtra::add_footnote(
+    escape = FALSE,
+    label = "Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \\\\",
+notation = "alphabet",
+threeparttable = TRUE
+)
 
 
 ```
+
+

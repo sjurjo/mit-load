@@ -9,9 +9,9 @@ github-repo: sjurjo/mit-load
 cover-image: resources/civil.png
 #bibliography: 
 
-
 ---
 
 # Introduksjon
 
-Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvordan terrenget du beveger deg er og høydemeter er vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018].
+Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvilket terreng du beveger deg i og høydemeter vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018]. Derfor er det viktig å ha noen forkunnskaper omkring forflytnings arbeidskravet slik at du som soldat kan forbrede deg best mulig med hensikt i å optimalisere din operative evne over tid.
+

@@ -10,11 +10,11 @@ book:
   repo-url: https://github.com/sjurjo/mit-load
   repo-branch: master
   repo-actions: [edit, issue, source]
-  #downloads: [epub]
+  downloads: [epub]
   chapters:
   - index.qmd
   - 01-intro.qmd
-  - part: "Data visulaization"
+  - part: "Data visulisering"
     chapters: 
     - 02-data.qmd
   - 99-refs.qmd

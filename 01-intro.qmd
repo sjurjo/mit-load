@@ -11,7 +11,7 @@ editor_options:
 Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger. 
 
 
-Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning. Forflyttning
+
 
 
 ## Oppakning
@@ -31,7 +31,8 @@ Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer p�
 
 
 
-
-
-
 ## Graving
+
+## Tester og evaluering
+
+Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning. Forflyttning
