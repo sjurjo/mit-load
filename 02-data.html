@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Arbeid med dine data – Forflyttning med oppakning</title>
+<title>3&nbsp; Energiforbruk – Forflyttning med oppakning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -34,18 +54,19 @@ ul.task-list li input[type="checkbox"] {
 <link href="./01-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cfea98210252cef090cf954258978f44.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f80a5f87bbd4b8391e95e2e7d713aed7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-cfea98210252cef090cf954258978f44.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9a829fc22ad631a23366cb62cf7abf7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90847f3a5739ee6e329bd22687b9eabc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9a829fc22ad631a23366cb62cf7abf7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,10 +95,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -248,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-data.html">Data visulaization</a></li><li class="breadcrumb-item"><a href="./02-data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Arbeid med dine data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-data.html">Data visulisering</a></li><li class="breadcrumb-item"><a href="./02-data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Energiforbruk</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -263,12 +313,14 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./resources/FHS_3_1.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./resources\FHS_3_1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./resources\FHS_3_1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Forflyttning med oppakning</a> 
-        <div class="sidebar-tools-main">
+        <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/sjurjo/mit-load" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Forflyttning-med-oppakning.epub" title="Download ePub" class="quarto-navigation-tool px-1" aria-label="Download ePub"><i class="bi bi-journal"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -295,7 +347,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Data visulaization</span></a>
+ <span class="menu-text">Data visulisering</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -304,7 +356,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Arbeid med dine data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Energiforbruk</span></span></a>
   </div>
 </li>
       </ul>
@@ -325,17 +377,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fyll-inn" id="toc-fyll-inn" class="nav-link active" data-scroll-target="#fyll-inn"><span class="header-section-number">3.1</span> Fyll inn</a></li>
+  <li><a href="#eksempel-på-forflytning-med-ulik-oppakningd" id="toc-eksempel-på-forflytning-med-ulik-oppakningd" class="nav-link active" data-scroll-target="#eksempel-på-forflytning-med-ulik-oppakningd"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakningd</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sjurjo/mit-load/edit/master/02-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sjurjo/mit-load/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/sjurjo/mit-load/blob/master/02-data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-data.html">Data visulaization</a></li><li class="breadcrumb-item"><a href="./02-data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Arbeid med dine data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-data.html">Data visulisering</a></li><li class="breadcrumb-item"><a href="./02-data.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Energiforbruk</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Arbeid med dine data</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Energiforbruk</span></h1>
 </div>
 
 
@@ -352,115 +404,411 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="eksempel-på-forflytning-med-ulik-oppakningd" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="eksempel-på-forflytning-med-ulik-oppakningd"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakningd</h2>
+<p>For å finne ut hvor mye oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier.</p>
 <ul>
-<li>Pandolf’s equation: energy expenditure of loaded marches is calculated with the following equation:</li>
+<li><p>Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.</p></li>
+<li><p>Pandolf’s formel: energiforbruk ved forlfytning med oppakning er kalkulert med folgende formel:</p></li>
 </ul>
-<section id="fyll-inn" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="fyll-inn"><span class="header-section-number">3.1</span> Fyll inn</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>$weight
-[1] 50 50 70 70 90 90
-
-$load
-[1] 25 38 25 38 25 38
-
-$terrain
-[1] 1.1
-
-$velocity
-[1] 2.2
-
-$grade
-[1] 0</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  711.4500  879.4256  887.9047 1031.1419 1071.1369 1202.8455</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  weight load terrain velocity grade    result
-1     50   25     1.1      2.2     0  711.4500
-2     50   38     1.1      2.2     0  879.4256
-3     70   25     1.1      2.2     0  887.9047
-4     70   38     1.1      2.2     0 1031.1419
-5     90   25     1.1      2.2     0 1071.1369
-6     90   38     1.1      2.2     0 1202.8455</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2039016 0.2520434 0.1817668 0.2110895 0.1705488 0.1915197</code></pre>
-</div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<p><span class="math display">\[M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)\]</span></p>
+<p>hvor <span class="math inline">\(\text{M}_w\)</span> = energi kostnad ved marsjering (watt), <span class="math inline">\(\text{W}\)</span> = kroppsvekt i kg, <span class="math inline">\(\text{L}\)</span> = oppakning i kg, <span class="math inline">\(\text{T}\)</span> = terreng faktor, <span class="math inline">\(\text{V}\)</span> = hastighet/marsj hastighet (m/s), <span class="math inline">\(\text{G}\)</span> = grader/helning i %.</p>
+<p>I <a href="#tbl-energi" class="quarto-xref">Table&nbsp;<span>3.2</span></a> har jeg lagt inn personer (ID) med ulik kroppsvekt og oppakning. Terreng faktor, hastighet og helning er konstante mellom personene.</p>
+<div class="cell page-columns page-full">
+<div id="tbl-data" class="cell quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.1: Tabell med variabler for utregning av energiforbruk
+</figcaption>
+<div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 22%">
+<col style="width: 19%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 11%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: right;">weight</th>
-<th style="text-align: right;">load</th>
-<th style="text-align: right;">terrain</th>
-<th style="text-align: right;">velocity</th>
-<th style="text-align: right;">grade</th>
-<th style="text-align: right;">result</th>
-<th style="text-align: right;">result_2</th>
+<th style="text-align: left;">ID</th>
+<th style="text-align: center;">Kroppsvekt (kg)</th>
+<th style="text-align: left;">Oppakning (kg)</th>
+<th style="text-align: center;">Terreng faktor</th>
+<th style="text-align: left;">Hastighet (m/s)</th>
+<th style="text-align: center;">Helning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">711.4500</td>
-<td style="text-align: right;">0.2039016</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">879.4256</td>
-<td style="text-align: right;">0.2520434</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">887.9047</td>
-<td style="text-align: right;">0.1817668</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1031.1419</td>
-<td style="text-align: right;">0.2110895</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1071.1369</td>
-<td style="text-align: right;">0.1705488</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">1.1</td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1202.8455</td>
-<td style="text-align: right;">0.1915197</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: left;">1.2</td>
+<td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Note:</strong> <sup>a</sup>Terreng faktor: 1.1 corresponding to <em>dirt road</em> on a weighting scale that goes from 1.0 for the black topping road to 4.1 for soft snow of 35 cm <span class="citation" data-cites="colosio_2018">(<a href="99-refs.html#ref-colosio_2018" role="doc-biblioref">Colosio and Pogliaghi 2018</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-colosio_2018" class="csl-entry" role="listitem">
+Colosio, Alessandro L, and S Pogliaghi. 2018. <span>“Quantification of Energy Expenditure of Military Loaded Runs: What Is the Performance of Laboratory-Based Equations When Applied to the Field Environment?”</span> <em>Journal of the Royal Army Medical Corps</em> 164 (4): 253–58. <a href="https://doi.org/10.1136/jramc-2017-000887">https://doi.org/10.1136/jramc-2017-000887</a>.
+</div></div></div>
+</div>
+</figure>
 </div>
 </div>
+<p>I <a href="#tbl-energi" class="quarto-xref">Table&nbsp;<span>3.2</span></a> har jeg kalkulert energiforbruket med Pandolf’s formel. Formelen kalkulerer energiforbruket i <em>watt</em> for så å legge inn en faktor for å konvergere det til <em>Kcal</em>. Vi får da energiforbruket til personen i <em>Kcal per minutt</em>.</p>
+<p>Hvordan tolker vi disse dataene?</p>
+<div class="cell">
+<div id="tbl-energi" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-energi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.2: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+</figcaption>
+<div aria-describedby="tbl-energi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 17%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 17%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">Kroppsvekt (kg)</th>
+<th style="text-align: right;">Oppakning (kg)</th>
+<th style="text-align: right;">Terreng faktor</th>
+<th style="text-align: right;">Hastighet (m/s)</th>
+<th style="text-align: right;">Helning</th>
+<th style="text-align: right;">Watt</th>
+<th style="text-align: right;">Kcal / min</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">290.700</td>
+<td style="text-align: right;">4.166</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">360.260</td>
+<td style="text-align: right;">5.163</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">354.955</td>
+<td style="text-align: right;">5.087</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">406.980</td>
+<td style="text-align: right;">5.832</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">425.987</td>
+<td style="text-align: right;">6.104</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">469.809</td>
+<td style="text-align: right;">6.732</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <sup>a</sup>Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<ul>
+<li>MEN, hva skjer når vi kontrollerer for personers kroppsvekt?</li>
+<li>Hvem bruker mest energi med å forflytte seg med oppakning? Hvem forbruker mest energi med å forflytte seg egentlig?</li>
+</ul>
+<p>I <a href="#tbl-energi2" class="quarto-xref">Table&nbsp;<span>3.3</span></a> har jeg lagt inn kroppsvekt og kontrollert for dette i utregningen.</p>
+<div class="cell">
+<div id="tbl-energi2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-energi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.3: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+</figcaption>
+<div aria-describedby="tbl-energi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">Kroppsvekt (kg)</th>
+<th style="text-align: right;">Oppakning (kg)</th>
+<th style="text-align: right;">Terreng faktor</th>
+<th style="text-align: right;">Hastighet (m/s)</th>
+<th style="text-align: right;">Helning</th>
+<th style="text-align: right;">Watt</th>
+<th style="text-align: right;">Kcal / kg / min</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">290.700</td>
+<td style="text-align: right;">0.083</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">360.260</td>
+<td style="text-align: right;">0.103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">354.955</td>
+<td style="text-align: right;">0.073</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">406.980</td>
+<td style="text-align: right;">0.083</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">425.987</td>
+<td style="text-align: right;">0.068</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">469.809</td>
+<td style="text-align: right;">0.075</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <sup>a</sup>Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>I <a href="#tbl-energi3" class="quarto-xref">Table&nbsp;<span>3.4</span></a> er energiforbruk per time kalkulert.</p>
+<div class="cell">
+<div id="tbl-energi3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-energi3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.4: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
+</figcaption>
+<div aria-describedby="tbl-energi3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: right;">Kroppsvekt (kg)</th>
+<th style="text-align: right;">Oppakning (kg)</th>
+<th style="text-align: right;">Terreng faktor</th>
+<th style="text-align: right;">Hastighet (m/s)</th>
+<th style="text-align: right;">Helning</th>
+<th style="text-align: right;">Watt</th>
+<th style="text-align: right;">Kcal / kg / time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">290.700</td>
+<td style="text-align: right;">4.999</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">360.260</td>
+<td style="text-align: right;">6.195</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">354.955</td>
+<td style="text-align: right;">4.360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">406.980</td>
+<td style="text-align: right;">4.999</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">425.987</td>
+<td style="text-align: right;">4.070</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: right;">90</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">1.1</td>
+<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">469.809</td>
+<td style="text-align: right;">4.488</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> <sup>a</sup>Konverterer Watt til Kcal med faktor: 1 W = 0.014333 kcal per min. \</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+
 
 
 </section>
@@ -530,13 +878,14 @@ $grade
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
