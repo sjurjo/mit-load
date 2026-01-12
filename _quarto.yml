@@ -13,8 +13,10 @@ book:
   downloads: [epub]
   chapters:
   - index.qmd
-  - 01-intro.qmd
-  - part: "Data visulisering"
+  - part: "Forflyttning"
+    chapters:
+    - 01-intro.qmd
+  - part: "Data Visulisering"
     chapters: 
     - 02-data.qmd
   - 99-refs.qmd

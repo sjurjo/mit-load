@@ -8,18 +8,145 @@ editor_options:
 
 # Forflyttning
 
-Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger. 
+## Physical employment standards
 
+- Majoriteten av grener i forsvaret (internasjonalt) har implementert/utviklet en Physical employment standards (PES). PES reflekterer og blitt utviklet i forhold til typiske jobb spesifikke krav som er definert gjennom de fysiske og mentale elementene som soldaten vil stå ovenfor i sin forsvarsposisjon. De fleste militære stillinger krever en varierende grad av fysisk form. 
+
+```{r}
+#| label: fig-PES
+#| include: TRUE
+#| echo: FALSE
+#| eval: TRUE
+#| warning: FALSE
+#| message: FALSE
+#| fig.width: 12
+#| fig.height: 8 
+#| fig.cap: "For å oppfylle Physical Employment Standards for den aktuelle militære stillingen etter endt utdanning, vil treningen under utdanningsløpet etablere et grunnleggende nivå av fysisk kapasitet. For å kunne møte arbeidskravene ved deployering må soldaten deretter videreutvikle og spesialisere sin fysiske kapasitet til det nivået som kreves under deployering. Dette nivået må videre vedlikeholdes gjennom fasen Employment Progression. Figur modifisert fra @drain_2019"
+
+library(magick)
+
+# save image as ggplot
+
+my_plot_ggplot <- image_read("./resources/deploy.png") %>% 
+  image_ggplot(interpolate = TRUE)
+
+my_plot_ggplot
+```
+
+
+
+
+
+
+
+## Forflytning og energi omsetning
+
+Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger. Forflytning til fots med oppakning i tillegg til å flytte sin egen kroppsvekt er med på å økte energikravet betydelig. Energiomsetningen varierer fra trening i garnisonstjenesten til til forflytning i felt. Data fra felt øvelser, hvor marsj er en stor del av øvelsesaktiviteten, viser at energiomsetningen kan komme opp mellom 4500-6300 kcal per døgn hos mannlige soldater [@tharion_2005].  
+
+
+3109-7131 male kcal  
+2332-5597 female kcal  
+
+
+Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (@fig-energydef). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne [@nindl_2007;@ojanen_2018]. I forhold forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I @fig-energydef illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser ($\blacktriangledown$) og under deployering ($\bullet$).
+
+
+
+```{r}
+#| label: fig-energydef
+#| include: TRUE
+#| echo: FALSE
+#| eval: TRUE
+#| warning: FALSE
+#| message: FALSE
+#| fig.width: 12
+#| fig.height: 8 
+#| fig.cap: "Energiomsetning under deployering og felt øvelser. Tjukk svart heltrukket linje indikerer energibalanse"
+
+# save image as ggplot
+
+my_plot_ggplot <- image_read("./resources/energy.png") %>% 
+  image_ggplot(interpolate = TRUE)
+
+my_plot_ggplot
+```
 
 
 
 
 ## Oppakning
 
-
-
+- Anbefalinger
+  - Anbefalinger for hvor mye oppakningen burde veie har vært fra 20-45% av egen kroppsvekt, men stilling, oppdrag og fysisk form bør tas hensyn til [REF].
 
 ## Faktorer som påvirker forlyttning
+
+### Plassering av vekt.
+
+Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforbruket ved gange. Enkelt forklart er det mest energiøkonomiske å plassere vekten tett på kroppen massetyngdepunkt [@legg_1985].
+
+
+## Optimalisere forflyttning med oppakning
+
+### Treningsstudier
+
+Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + progressive spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett 
+
+gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (Harman et al., 1997, 2008, Williams et al., 1999,2002) . Dvs. inkludere mer spesifikk trening (spesifistets prinsippet) øker din prestasjonsevme i å marsjere med oppakning, sammenlignet med bare å trene styrke/utholdenhet. 
+
+
+Vanligvis en test på 3.2 km. 
+Uker 4-12 ukers varighet
+
+Den økologiske validiteten kan diskuteres, da detter er "korte tester", mens i virkligheten forflytter soldaten seg over lengre distanser og tid. 
+
+
+```{r}
+#| label: fig-loadstudies
+#| include: TRUE
+#| echo: FALSE
+#| eval: TRUE
+#| warning: FALSE
+#| message: FALSE
+#| fig.width: 12
+#| fig.height: 8 
+#| fig.cap: "Studier som har gjennomført en treningsintervensjon og målt prestasjonsendringer i forflyttning med oppakning (Load Carriage). Data plottet fra @knapik_2012"
+
+library(tidyverse)
+
+readxl::read_excel("./data/load_carriage.xlsx") |> 
+  unite(author, "author", "year", sep = ", ") |> 
+  pivot_longer(cols= c(performance_min, performance_percent),
+               names_to = "performance",
+               values_to = "values") |> 
+  mutate(perLab = ifelse(performance == "performance_min", "Minutter", "Prosent"),
+         ) |> 
+  
+  
+  ggplot(aes(author, values, fill=author)) + geom_col(position = "dodge2") + 
+  
+  labs(x="Studier", y="Load carriage performance (\u0394 - change) ", fill="Author") +
+  
+  coord_flip() + 
+  facet_grid(.~perLab, scales="free_x") +  
+  
+  #geom_text(aes(y = 0, label = paste(category)), angle = 0, hjust = 0, check_overlap = T) +
+    
+  guides(fill = FALSE) +
+  theme_classic() + 
+  theme(axis.title.x = element_text(size=14),
+        axis.title.y = element_text(size=14),
+      strip.text = element_text(size = 16, face = "bold"),  # Increase text size
+    strip.background = element_rect(fill = "lightblue", color = "black")) # Optional styling
+  
+  
+```
+
+
+
+[For mer info om dataene klikk her](http://www.github.com/sjurjo/mit-load)
+
+
 
 ### Kroppssammensetning
 
@@ -36,3 +163,12 @@ Militært personell har ofte krav til både tunge løft og må kunne bære tung 
 ## Tester og evaluering
 
 Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning. Forflyttning
+
+
+### For ytterligere lesning
+
+Link til Militær fysisk trening 1:
+
+https://jabba.mpublish.no/fhs/book/mft1/m-6369
+
+
