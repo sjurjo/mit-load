@@ -10,7 +10,7 @@ editor_options:
 
 ## Physical employment standards
 
-- Majoriteten av grener i forsvaret (internasjonalt) har implementert/utviklet en Physical employment standards (PES). PES reflekterer og blitt utviklet i forhold til typiske jobb spesifikke krav som er definert gjennom de fysiske og mentale elementene som soldaten vil stå ovenfor i sin forsvarsposisjon. De fleste militære stillinger krever en varierende grad av fysisk form. 
+- Majoriteten av forsvarsgrener internasjonalt har implementert eller utviklet *Physical Employment Standards* (PES). Disse standardene er utformet for å reflektere de typiske jobbspesifikke kravene i militære stillinger, og er basert på en analyse av de fysiske og mentale belastningene soldaten vil møte i sin operative rolle. De fleste militære stillinger stiller krav til fysisk kapasitet, med varierende grad og sammensetning avhengig av funksjon og oppdrag. 
 
 ```{r}
 #| label: fig-PES
@@ -74,7 +74,11 @@ my_plot_ggplot
 
 
 
-## Oppakning
+## Oppakning med marsj
+
+En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sekk, vest, våpen ect) på kropp under forflyttning []. Forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av størrelsen på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av påvirkningen av disse faktorene, øker det kravet til hjerte-kar systemet, metabolismen og neuromuskulæresystemet [].
+Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning. 
+
 
 - Anbefalinger
   - Anbefalinger for hvor mye oppakningen burde veie har vært fra 20-45% av egen kroppsvekt, men stilling, oppdrag og fysisk form bør tas hensyn til [REF].
@@ -90,9 +94,10 @@ Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforb
 
 ### Treningsstudier
 
-Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + progressive spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett 
+Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (*Harman et al., 1997, 2008, Williams et al., 1999,2002*). Det å inkludere mer spesifikk trening bidrar til å fobedre din prestasjonsevne i å marsjere med oppakning når det sammenlignes med bare å fokusere på en av modalitetene (styrke/utholdenhet). Dette kan da relateres til spesifistets prinsippet. Spesifistet prinsippet sier man må trene på det man skal bli god på eller omformulert til hva som sies i forsvaret *train as you will fight*. Repeterte bevegelsesmønster i en gitt arbeidsoppgave (i.e. Load Carriage), gjør at det neuromuskulære systemet primes for den spesifikke arbeidsbevegelsen. Denne primingen av det neurmuskulære systemet kan bidra til å bedre opprettholde kraftutviklingen. Marsj med oppakning vil dermed bli relativt lettere å gjennomføre med soldatens optimilaiserte bevegelsesmønster [@knapik_2012; @vaara_2022]. Videre kan gjentatte gjennomføringer/treninger med oppakning også redusere skaderisikoen.
 
-gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (Harman et al., 1997, 2008, Williams et al., 1999,2002) . Dvs. inkludere mer spesifikk trening (spesifistets prinsippet) øker din prestasjonsevme i å marsjere med oppakning, sammenlignet med bare å trene styrke/utholdenhet. 
+En interessant observasjon fra den systematiske oversiktsartikkelen til @knapik_2012, var at overkroppsstyrketrening sammen med aerob trening var bortimot like effektivt som både over- og underkroppsstyrke (+aerob trening) i å forbedre marsj med oppakningsprestasjonen. Selv om hoftenbeltet tar ~ 30% av oppakningsvekten, er det overkroppsmuskulaturen som belastes og bærer den primære vekten av sekken. I tillegg er overkroppsmuskulaturen viktig i å kunne stabilisere overkroppen med oppakning under marsj. Nyere orginal studier støtter denne konklusjonen og viser at 12 uker overkroppsstyrke predikerer prestasjonen med oppakning [Terho et al., 2018].
+
 
 
 Vanligvis en test på 3.2 km. 
@@ -136,6 +141,7 @@ readxl::read_excel("./data/load_carriage.xlsx") |>
   theme_classic() + 
   theme(axis.title.x = element_text(size=14),
         axis.title.y = element_text(size=14),
+        axis.text.y = element_text(size=10, face = "bold"),
       strip.text = element_text(size = 16, face = "bold"),  # Increase text size
     strip.background = element_rect(fill = "lightblue", color = "black")) # Optional styling
   
@@ -143,9 +149,14 @@ readxl::read_excel("./data/load_carriage.xlsx") |>
 ```
 
 
+- For mer info om dataene brukt i figuren klikk her: [Linken går til min github brukerkonto](http://www.github.com/sjurjo/mit-load/tree/main/data).
+- Deretter last ned **load_carriage.xlsx** filen.
 
-[For mer info om dataene klikk her](http://www.github.com/sjurjo/mit-load)
 
+
+
+
+**Anbefaling:** med bakgrunn i litteraturen og det vi har gått gjennom i dette avsnittet vil et treningsregime med styrke og utholdenhet med fokus på 1 ukentlig marsj med oppakning i 8-10 uker sannynligvis gjøre deg mer forbredt fysiologisk (og mentalt) til å forflytte deg med oppakning under øvelser eller deployering. En mesosyklus (blokk) med økt fokus på marsj med oppakning vil dermed være en viktig brikke for å gjøre deg mer robust og bidra til å optimalisere dine operative evner.
 
 
 ### Kroppssammensetning
@@ -156,19 +167,15 @@ readxl::read_excel("./data/load_carriage.xlsx") |>
 
 ### Arbeidsøkonomi
 
-
-
 ## Graving
 
 ## Tester og evaluering
 
-Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning. Forflyttning
+Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning.
 
 
 ### For ytterligere lesning
 
-Link til Militær fysisk trening 1:
-
-https://jabba.mpublish.no/fhs/book/mft1/m-6369
+Link til Militær fysisk trening 1 kompendium: [Linken går til forsvaret.no](https://jabba.mpublish.no/fhs/book/mft1/m-6369)
 
 
