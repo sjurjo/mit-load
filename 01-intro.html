@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,10 +95,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar floating slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -249,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html">Forflyttning</a></li><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -264,8 +313,8 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./resources\FHS_3_1.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="./resources\FHS_3_1.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="./resources\CISK.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./resources\CISK.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Forflyttning med oppakning</a> 
@@ -289,21 +338,32 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Forflytning med oppakning</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Data visulisering</span></a>
+ <span class="menu-text">Forflyttning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data Visulisering</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-data.html" class="sidebar-item-text sidebar-link">
@@ -328,24 +388,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#oppakning" id="toc-oppakning" class="nav-link active" data-scroll-target="#oppakning"><span class="header-section-number">2.1</span> Oppakning</a></li>
-  <li><a href="#faktorer-som-påvirker-forlyttning" id="toc-faktorer-som-påvirker-forlyttning" class="nav-link" data-scroll-target="#faktorer-som-påvirker-forlyttning"><span class="header-section-number">2.2</span> Faktorer som påvirker forlyttning</a>
+  <li><a href="#physical-employment-standards" id="toc-physical-employment-standards" class="nav-link active" data-scroll-target="#physical-employment-standards"><span class="header-section-number">2.1</span> Physical employment standards</a></li>
+  <li><a href="#forflytning-og-energi-omsetning" id="toc-forflytning-og-energi-omsetning" class="nav-link" data-scroll-target="#forflytning-og-energi-omsetning"><span class="header-section-number">2.2</span> Forflytning og energi omsetning</a></li>
+  <li><a href="#oppakning-med-marsj" id="toc-oppakning-med-marsj" class="nav-link" data-scroll-target="#oppakning-med-marsj"><span class="header-section-number">2.3</span> Oppakning med marsj</a></li>
+  <li><a href="#faktorer-som-påvirker-forlyttning" id="toc-faktorer-som-påvirker-forlyttning" class="nav-link" data-scroll-target="#faktorer-som-påvirker-forlyttning"><span class="header-section-number">2.4</span> Faktorer som påvirker forlyttning</a>
   <ul class="collapse">
-  <li><a href="#kroppssammensetning" id="toc-kroppssammensetning" class="nav-link" data-scroll-target="#kroppssammensetning"><span class="header-section-number">2.2.1</span> Kroppssammensetning</a></li>
-  <li><a href="#aerob-kapasitet" id="toc-aerob-kapasitet" class="nav-link" data-scroll-target="#aerob-kapasitet"><span class="header-section-number">2.2.2</span> Aerob kapasitet</a></li>
-  <li><a href="#styrke" id="toc-styrke" class="nav-link" data-scroll-target="#styrke"><span class="header-section-number">2.2.3</span> Styrke</a></li>
-  <li><a href="#arbeidsøkonomi" id="toc-arbeidsøkonomi" class="nav-link" data-scroll-target="#arbeidsøkonomi"><span class="header-section-number">2.2.4</span> Arbeidsøkonomi</a></li>
+  <li><a href="#plassering-av-vekt." id="toc-plassering-av-vekt." class="nav-link" data-scroll-target="#plassering-av-vekt."><span class="header-section-number">2.4.1</span> Plassering av vekt.</a></li>
   </ul></li>
-  <li><a href="#graving" id="toc-graving" class="nav-link" data-scroll-target="#graving"><span class="header-section-number">2.3</span> Graving</a></li>
-  <li><a href="#tester-og-evaluering" id="toc-tester-og-evaluering" class="nav-link" data-scroll-target="#tester-og-evaluering"><span class="header-section-number">2.4</span> Tester og evaluering</a></li>
+  <li><a href="#optimalisere-forflyttning-med-oppakning" id="toc-optimalisere-forflyttning-med-oppakning" class="nav-link" data-scroll-target="#optimalisere-forflyttning-med-oppakning"><span class="header-section-number">2.5</span> Optimalisere forflyttning med oppakning</a>
+  <ul class="collapse">
+  <li><a href="#treningsstudier" id="toc-treningsstudier" class="nav-link" data-scroll-target="#treningsstudier"><span class="header-section-number">2.5.1</span> Treningsstudier</a></li>
+  <li><a href="#kroppssammensetning" id="toc-kroppssammensetning" class="nav-link" data-scroll-target="#kroppssammensetning"><span class="header-section-number">2.5.2</span> Kroppssammensetning</a></li>
+  <li><a href="#aerob-kapasitet" id="toc-aerob-kapasitet" class="nav-link" data-scroll-target="#aerob-kapasitet"><span class="header-section-number">2.5.3</span> Aerob kapasitet</a></li>
+  <li><a href="#styrke" id="toc-styrke" class="nav-link" data-scroll-target="#styrke"><span class="header-section-number">2.5.4</span> Styrke</a></li>
+  <li><a href="#arbeidsøkonomi" id="toc-arbeidsøkonomi" class="nav-link" data-scroll-target="#arbeidsøkonomi"><span class="header-section-number">2.5.5</span> Arbeidsøkonomi</a></li>
+  </ul></li>
+  <li><a href="#graving" id="toc-graving" class="nav-link" data-scroll-target="#graving"><span class="header-section-number">2.6</span> Graving</a></li>
+  <li><a href="#tester-og-evaluering" id="toc-tester-og-evaluering" class="nav-link" data-scroll-target="#tester-og-evaluering"><span class="header-section-number">2.7</span> Tester og evaluering</a>
+  <ul class="collapse">
+  <li><a href="#for-ytterligere-lesning" id="toc-for-ytterligere-lesning" class="nav-link" data-scroll-target="#for-ytterligere-lesning"><span class="header-section-number">2.7.1</span> For ytterligere lesning</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sjurjo/mit-load/edit/master/01-intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sjurjo/mit-load/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/sjurjo/mit-load/blob/master/01-intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-intro.html">Forflyttning</a></li><li class="breadcrumb-item"><a href="./01-intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Forflyttning</span></h1>
 </div>
@@ -364,33 +434,132 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger.</p>
-<section id="oppakning" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="oppakning"><span class="header-section-number">2.1</span> Oppakning</h2>
+<section id="physical-employment-standards" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="physical-employment-standards"><span class="header-section-number">2.1</span> Physical employment standards</h2>
+<ul>
+<li>Majoriteten av forsvarsgrener internasjonalt har implementert eller utviklet <em>Physical Employment Standards</em> (PES). Disse standardene er utformet for å reflektere de typiske jobbspesifikke kravene i militære stillinger, og er basert på en analyse av de fysiske og mentale belastningene soldaten vil møte i sin operative rolle. De fleste militære stillinger stiller krav til fysisk kapasitet, med varierende grad og sammensetning avhengig av funksjon og oppdrag.</li>
+</ul>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-PES" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-PES-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-intro_files/figure-html/fig-PES-1.png" class="img-fluid figure-img" width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-PES-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: For å oppfylle Physical Employment Standards for den aktuelle militære stillingen etter endt utdanning, vil treningen under utdanningsløpet etablere et grunnleggende nivå av fysisk kapasitet. For å kunne møte arbeidskravene ved deployering må soldaten deretter videreutvikle og spesialisere sin fysiske kapasitet til det nivået som kreves under deployering. Dette nivået må videre vedlikeholdes gjennom fasen Employment Progression. Figur modifisert fra <span class="citation" data-cites="drain_2019">Drain and Reilly (<a href="99-refs.html#ref-drain_2019" role="doc-biblioref">2019</a>)</span>
+</figcaption>
+<div class="no-row-height column-margin column-container"><div id="ref-drain_2019" class="csl-entry" role="listitem">
+Drain, Jace R., and Tara J. Reilly. 2019. <span>“Physical Employment Standards, Physical Training and Musculoskeletal Injury in Physically Demanding Occupations.”</span> Edited by Gemma S. Milligan, Sam D. Blacker, Pieter E. H. Brown, and Andrew G. Siddall. <em>Work</em> 63 (4): 495–508. <a href="https://doi.org/10.3233/wor-192963">https://doi.org/10.3233/wor-192963</a>.
+</div></div></figure>
+</div>
+</div>
+</div>
 </section>
-<section id="faktorer-som-påvirker-forlyttning" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="faktorer-som-påvirker-forlyttning"><span class="header-section-number">2.2</span> Faktorer som påvirker forlyttning</h2>
-<section id="kroppssammensetning" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="kroppssammensetning"><span class="header-section-number">2.2.1</span> Kroppssammensetning</h3>
+<section id="forflytning-og-energi-omsetning" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="forflytning-og-energi-omsetning"><span class="header-section-number">2.2</span> Forflytning og energi omsetning</h2>
+<p>Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger. Forflytning til fots med oppakning i tillegg til å flytte sin egen kroppsvekt er med på å økte energikravet betydelig. Energiomsetningen varierer fra trening i garnisonstjenesten til til forflytning i felt. Data fra felt øvelser, hvor marsj er en stor del av øvelsesaktiviteten, viser at energiomsetningen kan komme opp mellom 4500-6300 kcal per døgn hos mannlige soldater <span class="citation" data-cites="tharion_2005">(<a href="99-refs.html#ref-tharion_2005" role="doc-biblioref">Tharion et al. 2005</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-tharion_2005" class="csl-entry" role="listitem">
+Tharion, W. J., H. R. Lieberman, S. J. Montain, A. J. Young, C. J. Baker-Fulco, J. P. Delany, and R. W. Hoyt. 2005. <span>“Energy Requirements of Military Personnel.”</span> <em>Appetite</em> 44 (1): 47–65. <a href="https://doi.org/10.1016/j.appet.2003.11.010">https://doi.org/10.1016/j.appet.2003.11.010</a>.
+</div></div><p>3109-7131 male kcal<br>
+2332-5597 female kcal</p>
+<p>Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (<a href="#fig-energydef" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne <span class="citation" data-cites="nindl_2007 ojanen_2018">(<a href="99-refs.html#ref-nindl_2007" role="doc-biblioref">Nindl et al. 2007</a>; <a href="99-refs.html#ref-ojanen_2018" role="doc-biblioref">Ojanen T, Jalanko P, and Kyrolainen 2018</a>)</span>. I forhold forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I <a href="#fig-energydef" class="quarto-xref">Figure&nbsp;<span>2.2</span></a> illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser (<span class="math inline">\(\blacktriangledown\)</span>) og under deployering (<span class="math inline">\(\bullet\)</span>).</p>
+<div class="no-row-height column-margin column-container"><div id="ref-nindl_2007" class="csl-entry" role="listitem">
+Nindl, B. C., B. R. Barnes, J. A. Alemany, P. N. Frykman, R. L. Shippee, and K. E. Friedl. 2007. <span>“Physiological Consequences of <span>U</span>.<span>S</span>. <span>Army</span> <span>Ranger</span> Training.”</span> <em>Med Sci Sports Exerc</em> 39 (8): 1380–87. <a href="https://doi.org/10.1249/MSS.0b013e318067e2f7">https://doi.org/10.1249/MSS.0b013e318067e2f7</a>.
+</div><div id="ref-ojanen_2018" class="csl-entry" role="listitem">
+Ojanen T, Jalanko P, and H. Kyrolainen. 2018. <span>“Physical Fitness, Hormonal, and Immunological Responses During Prolonged Military Field Training.”</span> <em>Physiol Rep</em> 6(17). <a href="https://doi.org/10.14814/phy2.13850]">https://doi.org/10.14814/phy2.13850]</a>.
+</div></div><div class="cell">
+<div class="cell-output-display">
+<div id="fig-energydef" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-energydef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-intro_files/figure-html/fig-energydef-1.png" class="img-fluid figure-img" width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-energydef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Energiomsetning under deployering og felt øvelser. Tjukk svart heltrukket linje indikerer energibalanse
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="aerob-kapasitet" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="aerob-kapasitet"><span class="header-section-number">2.2.2</span> Aerob kapasitet</h3>
+<section id="oppakning-med-marsj" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="oppakning-med-marsj"><span class="header-section-number">2.3</span> Oppakning med marsj</h2>
+<p>En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sekk, vest, våpen ect) på kropp under forflyttning []. Forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av størrelsen på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av påvirkningen av disse faktorene, øker det kravet til hjerte-kar systemet, metabolismen og neuromuskulæresystemet []. Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning.</p>
+<ul>
+<li>Anbefalinger
+<ul>
+<li>Anbefalinger for hvor mye oppakningen burde veie har vært fra 20-45% av egen kroppsvekt, men stilling, oppdrag og fysisk form bør tas hensyn til [REF].</li>
+</ul></li>
+</ul>
 </section>
-<section id="styrke" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="styrke"><span class="header-section-number">2.2.3</span> Styrke</h3>
+<section id="faktorer-som-påvirker-forlyttning" class="level2 page-columns page-full" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="faktorer-som-påvirker-forlyttning"><span class="header-section-number">2.4</span> Faktorer som påvirker forlyttning</h2>
+<section id="plassering-av-vekt." class="level3 page-columns page-full" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="plassering-av-vekt."><span class="header-section-number">2.4.1</span> Plassering av vekt.</h3>
+<p>Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforbruket ved gange. Enkelt forklart er det mest energiøkonomiske å plassere vekten tett på kroppen massetyngdepunkt <span class="citation" data-cites="legg_1985">(<a href="99-refs.html#ref-legg_1985" role="doc-biblioref">Legg and Mahanty 1985</a>)</span>.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-legg_1985" class="csl-entry" role="listitem">
+Legg, S. J., and A. Mahanty. 1985. <span>“Comparison of Five Modes of Carrying a Load Close to the Trunk.”</span> <em>Ergonomics</em> 28 (12): 1653–60. <a href="https://doi.org/10.1080/00140138508963301">https://doi.org/10.1080/00140138508963301</a>.
+</div></div></section>
 </section>
-<section id="arbeidsøkonomi" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="arbeidsøkonomi"><span class="header-section-number">2.2.4</span> Arbeidsøkonomi</h3>
+<section id="optimalisere-forflyttning-med-oppakning" class="level2 page-columns page-full" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="optimalisere-forflyttning-med-oppakning"><span class="header-section-number">2.5</span> Optimalisere forflyttning med oppakning</h2>
+<section id="treningsstudier" class="level3 page-columns page-full" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="treningsstudier"><span class="header-section-number">2.5.1</span> Treningsstudier</h3>
+<p>Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se <a href="#fig-loadstudies" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive “load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (<em>Harman et al., 1997, 2008, Williams et al., 1999,2002</em>). Det å inkludere mer spesifikk trening bidrar til å fobedre din prestasjonsevne i å marsjere med oppakning når det sammenlignes med bare å fokusere på en av modalitetene (styrke/utholdenhet). Dette kan da relateres til spesifistets prinsippet. Spesifistet prinsippet sier man må trene på det man skal bli god på eller omformulert til hva som sies i forsvaret <em>train as you will fight</em>. Repeterte bevegelsesmønster i en gitt arbeidsoppgave (i.e.&nbsp;Load Carriage), gjør at det neuromuskulære systemet primes for den spesifikke arbeidsbevegelsen. Denne primingen av det neurmuskulære systemet kan bidra til å bedre opprettholde kraftutviklingen. Marsj med oppakning vil dermed bli relativt lettere å gjennomføre med soldatens optimilaiserte bevegelsesmønster <span class="citation" data-cites="knapik_2012 vaara_2022">(<a href="99-refs.html#ref-knapik_2012" role="doc-biblioref">Knapik et al. 2012</a>; <a href="99-refs.html#ref-vaara_2022" role="doc-biblioref">Vaara et al. 2022</a>)</span>. Videre kan gjentatte gjennomføringer/treninger med oppakning også redusere skaderisikoen.</p>
+<div class="no-row-height column-margin column-container"><div id="ref-vaara_2022" class="csl-entry" role="listitem">
+Vaara, J. P., H. Groeller, J. Drain, H. Kyröläinen, K. Pihlainen, T. Ojanen, C. Connaboy, M. Santtila, P. Agostinelli, and B. C. Nindl. 2022. <span>“Physical Training Considerations for Optimizing Performance in Essential Military Tasks.”</span> <em>Eur J Sport Sci</em> 22 (1): 43–57. <a href="https://doi.org/10.1080/17461391.2021.1930193">https://doi.org/10.1080/17461391.2021.1930193</a>.
+</div></div><p>En interessant observasjon fra den systematiske oversiktsartikkelen til <span class="citation" data-cites="knapik_2012">Knapik et al. (<a href="99-refs.html#ref-knapik_2012" role="doc-biblioref">2012</a>)</span>, var at overkroppsstyrketrening sammen med aerob trening var bortimot like effektivt som både over- og underkroppsstyrke (+aerob trening) i å forbedre marsj med oppakningsprestasjonen. Selv om hoftenbeltet tar ~ 30% av oppakningsvekten, er det overkroppsmuskulaturen som belastes og bærer den primære vekten av sekken. I tillegg er overkroppsmuskulaturen viktig i å kunne stabilisere overkroppen med oppakning under marsj. Nyere orginal studier støtter denne konklusjonen og viser at 12 uker overkroppsstyrke predikerer prestasjonen med oppakning [Terho et al., 2018].</p>
+<p>Vanligvis en test på 3.2 km. Uker 4-12 ukers varighet</p>
+<p>Den økologiske validiteten kan diskuteres, da detter er “korte tester”, mens i virkligheten forflytter soldaten seg over lengre distanser og tid.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div id="fig-loadstudies" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-loadstudies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-intro_files/figure-html/fig-loadstudies-1.png" class="img-fluid figure-img" width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loadstudies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Studier som har gjennomført en treningsintervensjon og målt prestasjonsendringer i forflyttning med oppakning (Load Carriage). Data plottet fra <span class="citation" data-cites="knapik_2012">Knapik et al. (<a href="99-refs.html#ref-knapik_2012" role="doc-biblioref">2012</a>)</span>
+</figcaption>
+<div class="no-row-height column-margin column-container"><div id="ref-knapik_2012" class="csl-entry" role="listitem">
+Knapik, J. J., E. A. Harman, R. A. Steelman, and B. S. Graham. 2012. <span>“A Systematic Review of the Effects of Physical Training on Load Carriage Performance.”</span> <em>J Strength Cond Res</em> 26 (2): 585–97. <a href="https://doi.org/10.1519/JSC.0b013e3182429853">https://doi.org/10.1519/JSC.0b013e3182429853</a>.
+</div></div></figure>
+</div>
+</div>
+</div>
+<ul>
+<li>For mer info om dataene brukt i figuren klikk her: <a href="http://www.github.com/sjurjo/mit-load/tree/main/data">Linken går til min github brukerkonto</a>.</li>
+<li>Deretter last ned <strong>load_carriage.xlsx</strong> filen.</li>
+</ul>
+<p><strong>Anbefaling:</strong> med bakgrunn i litteraturen og det vi har gått gjennom i dette avsnittet vil et treningsregime med styrke og utholdenhet med fokus på 1 ukentlig marsj med oppakning i 8-10 uker sannynligvis gjøre deg mer forbredt fysiologisk (og mentalt) til å forflytte deg med oppakning under øvelser eller deployering. En mesosyklus (blokk) med økt fokus på marsj med oppakning vil dermed være en viktig brikke for å gjøre deg mer robust og bidra til å optimalisere dine operative evner.</p>
+</section>
+<section id="kroppssammensetning" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="kroppssammensetning"><span class="header-section-number">2.5.2</span> Kroppssammensetning</h3>
+</section>
+<section id="aerob-kapasitet" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="aerob-kapasitet"><span class="header-section-number">2.5.3</span> Aerob kapasitet</h3>
+</section>
+<section id="styrke" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="styrke"><span class="header-section-number">2.5.4</span> Styrke</h3>
+</section>
+<section id="arbeidsøkonomi" class="level3" data-number="2.5.5">
+<h3 data-number="2.5.5" class="anchored" data-anchor-id="arbeidsøkonomi"><span class="header-section-number">2.5.5</span> Arbeidsøkonomi</h3>
 </section>
 </section>
-<section id="graving" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="graving"><span class="header-section-number">2.3</span> Graving</h2>
+<section id="graving" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="graving"><span class="header-section-number">2.6</span> Graving</h2>
 </section>
-<section id="tester-og-evaluering" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="tester-og-evaluering"><span class="header-section-number">2.4</span> Tester og evaluering</h2>
-<p>Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning. Forflyttning</p>
+<section id="tester-og-evaluering" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="tester-og-evaluering"><span class="header-section-number">2.7</span> Tester og evaluering</h2>
+<p>Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning.</p>
+<section id="for-ytterligere-lesning" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="for-ytterligere-lesning"><span class="header-section-number">2.7.1</span> For ytterligere lesning</h3>
+<p>Link til Militær fysisk trening 1 kompendium: <a href="https://jabba.mpublish.no/fhs/book/mft1/m-6369">Linken går til forsvaret.no</a></p>
 
 
+
+</section>
 </section>
 
 </main> <!-- /main -->
