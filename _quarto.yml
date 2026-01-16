@@ -5,7 +5,7 @@ project:
 book:
   title: "Forflyttning med oppakning"
   author: "Sjur Fortun Øfsteng"
-  date: "2026-01-01"
+  date: "last-modified"
   search: true
   repo-url: https://github.com/sjurjo/mit-load
   repo-branch: master

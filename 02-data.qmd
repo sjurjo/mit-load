@@ -281,6 +281,8 @@ threeparttable = TRUE
 
 I @tbl-energi3 er energiforbruk per time kalkulert.
 
+- Hvordan burde man disponere oppakningen laget for å optimalisere stridsevne for hele laget?
+
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #| label: tbl-energi3
 #| tbl-cap: Energiforbruk ved ulik kroppsvekt og kilo oppakning.

@@ -4,13 +4,13 @@ editor_options:
   chunk_output_type: console
 ---
 
+# Physical Employment Standards
 
+## Krav til fysisk form i militære arbeidsoppgaver
 
-# Forflyttning
+Majoriteten av internasjonale forsvarsgrener har implementert eller utviklet en *Physical Employment Standards* (PES). Disse standardene er utformet for å reflektere de typiske jobbspesifikke kravene i militære stillinger og er basert på en analyse av de fysiske og mentale belastningene soldaten vil møte i sin operative rolle [@drain_2019; @nato_2019]. De aller fleste militære stillinger stiller krav til fysisk kapasitet. Fysisk kapasitet er soldatens fundament og er en av de grunnleggende soldat ferdighetene. Men graden av fysisk kapasitet, over et visst grunnnivå, kan variere avhengig av soldatens funksjon (stilling) og oppdrag.  
 
-## Physical employment standards
-
-- Majoriteten av forsvarsgrener internasjonalt har implementert eller utviklet *Physical Employment Standards* (PES). Disse standardene er utformet for å reflektere de typiske jobbspesifikke kravene i militære stillinger, og er basert på en analyse av de fysiske og mentale belastningene soldaten vil møte i sin operative rolle. De fleste militære stillinger stiller krav til fysisk kapasitet, med varierende grad og sammensetning avhengig av funksjon og oppdrag. 
+@fig-PES viser hvordan en soldat utvikler sin fysiske kapasitet/prestasjonsevne gjennom utdanning og trening for å imøtekomme de operasjonelle kravene som møter soldaten i stilling/operasjoner (se figur tekst).
 
 ```{r}
 #| label: fig-PES
@@ -21,7 +21,7 @@ editor_options:
 #| message: FALSE
 #| fig.width: 12
 #| fig.height: 8 
-#| fig.cap: "For å oppfylle Physical Employment Standards for den aktuelle militære stillingen etter endt utdanning, vil treningen under utdanningsløpet etablere et grunnleggende nivå av fysisk kapasitet. For å kunne møte arbeidskravene ved deployering må soldaten deretter videreutvikle og spesialisere sin fysiske kapasitet til det nivået som kreves under deployering. Dette nivået må videre vedlikeholdes gjennom fasen Employment Progression. Figur modifisert fra @drain_2019"
+#| fig.cap: "For å imøtekomme Physical Employment Standards for den aktuelle militære stillingen etter endt utdanning, vil treningen under utdanningsløpet etablere et grunnleggende nivå av fysisk kapasitet. For å kunne møte arbeidskravene ved deployering må soldaten deretter videreutvikle og spesialisere sin fysiske kapasitet til det nivået som kreves under deployering. Dette nivået må videre vedlikeholdes gjennom fasen Employment Progression. Figur modifisert fra @drain_2019"
 
 library(magick)
 
@@ -34,21 +34,13 @@ my_plot_ggplot
 ```
 
 
+## Forflytning og energiomsetning
 
+Militært personell stilles ofte overfor krav som innebærer både tunge løft og det å kunne bære betydelig vekt over lengre distanser og tidsperioder. Det er blant annet rapportert at soldater i løpet av et år under deployering i gjennomsnitt bærer ca 22 kg mere vekt på kropp (2. linje), enn under garnison tjeneste [@nindl_2013]. Videre viser rapporter en økning i den fysiske arbeidsbelastningen på mellom 12 og 22 prosent under deployering sammenlignet med garnisons tjeneste [@boye_2017]. Dette innebærer at soldaten må være fysisk forberedt på å møte de økte kravene som følger med overgangen fra garnisons tjeneste til deployering og operasjoner.
 
+[ENDRE setningsoppbyggning:] Som følge av at kravet til soldatens fysisk form og for å imøtekomme den økt fysisk belastning ved en eventuell deployering, øker også energiomsetningen som en konsekvens av å forlytte seg med økt vekt bæring på kropp (i.e oppakninger 2-4 linje). Forflytning til fots med oppakning i tillegg til å flytte sin egen kroppsvekt er med på å øke energikravet betydelig. Data fra feltøvelser, hvor marsj med oppakning er en stor del av øvelsesaktiviteten, viser at energiomsetningen kan komme opp mellom $\sim$ 3100-6300 kcal og $\sim$ 2300-5500 kcal per døgn hos hhv. mannlige og kvinnelige soldater [@tharion_2005;murphy_2018].
 
-
-
-## Forflytning og energi omsetning
-
-Militært personell har ofte krav til både tunge løft og må kunne bære tung last over lengre strekninger. Forflytning til fots med oppakning i tillegg til å flytte sin egen kroppsvekt er med på å økte energikravet betydelig. Energiomsetningen varierer fra trening i garnisonstjenesten til til forflytning i felt. Data fra felt øvelser, hvor marsj er en stor del av øvelsesaktiviteten, viser at energiomsetningen kan komme opp mellom 4500-6300 kcal per døgn hos mannlige soldater [@tharion_2005].  
-
-
-3109-7131 male kcal  
-2332-5597 female kcal  
-
-
-Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (@fig-energydef). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne [@nindl_2007;@ojanen_2018]. I forhold forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I @fig-energydef illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser ($\blacktriangledown$) og under deployering ($\bullet$).
+Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (@fig-energydef). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne [@montain_2003;@nindl_2007;@ojanen_2018]. I forhold til forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I @fig-energydef illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser ($\blacktriangledown$) og under deployering ($\bullet$).
 
 
 
@@ -61,7 +53,7 @@ Har soldaten en stor energiomsetning over en periode i forbindelse med felt elle
 #| message: FALSE
 #| fig.width: 12
 #| fig.height: 8 
-#| fig.cap: "Energiomsetning under deployering og felt øvelser. Tjukk svart heltrukket linje indikerer energibalanse"
+#| fig.cap: "Energiomsetning under deployering og felt øvelser. Tjukk svart heltrukket linje indikerer energibalanse. Megajoules til kcal multipliser med faktor 238.86 (15MJ = ~3500kcal).."
 
 # save image as ggplot
 
@@ -72,16 +64,22 @@ my_plot_ggplot
 ```
 
 
+## Oppakning under forflyttning (marsj)
+
+I tillegg til økt energiomsettning, vil forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av størrelsen på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av påvirkningen av disse faktorene, øker det kravet til hjerte-kar systemet, metabolismen og det nevromuskulæresystemet [@knapik_2004].
+Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning []. 
 
 
-## Oppakning med marsj
 
-En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sekk, vest, våpen ect) på kropp under forflyttning []. Forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av størrelsen på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av påvirkningen av disse faktorene, øker det kravet til hjerte-kar systemet, metabolismen og neuromuskulæresystemet [].
-Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning. 
+En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sekk, vest, våpen ect) på kropp under forflyttning [].
 
 
 - Anbefalinger
   - Anbefalinger for hvor mye oppakningen burde veie har vært fra 20-45% av egen kroppsvekt, men stilling, oppdrag og fysisk form bør tas hensyn til [REF].
+
+
+Research shows that locating the load center of mass as close as possible to the body center of mass results in the lowest energy cost and tends to keep the body in an up right position similar to unloaded walking. Loads carried on other parts of the body result in higher energy expenditures: each kilogram added to the foot increases en ergy expenditure 7% to 10%; each kilogram added to the thigh increases energy expenditure 4%. Hip belts on rucksacks should be used whenever possible as they reduce pressure on the shoulders and increase comfort. Low or mid-back load placement might be preferable on uneven terrain but high load placement may be best for even terrain.
+
 
 ## Faktorer som påvirker forlyttning
 
@@ -96,7 +94,7 @@ Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforb
 
 Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (*Harman et al., 1997, 2008, Williams et al., 1999,2002*). Det å inkludere mer spesifikk trening bidrar til å fobedre din prestasjonsevne i å marsjere med oppakning når det sammenlignes med bare å fokusere på en av modalitetene (styrke/utholdenhet). Dette kan da relateres til spesifistets prinsippet. Spesifistet prinsippet sier man må trene på det man skal bli god på eller omformulert til hva som sies i forsvaret *train as you will fight*. Repeterte bevegelsesmønster i en gitt arbeidsoppgave (i.e. Load Carriage), gjør at det neuromuskulære systemet primes for den spesifikke arbeidsbevegelsen. Denne primingen av det neurmuskulære systemet kan bidra til å bedre opprettholde kraftutviklingen. Marsj med oppakning vil dermed bli relativt lettere å gjennomføre med soldatens optimilaiserte bevegelsesmønster [@knapik_2012; @vaara_2022]. Videre kan gjentatte gjennomføringer/treninger med oppakning også redusere skaderisikoen.
 
-En interessant observasjon fra den systematiske oversiktsartikkelen til @knapik_2012, var at overkroppsstyrketrening sammen med aerob trening var bortimot like effektivt som både over- og underkroppsstyrke (+aerob trening) i å forbedre marsj med oppakningsprestasjonen. Selv om hoftenbeltet tar ~ 30% av oppakningsvekten, er det overkroppsmuskulaturen som belastes og bærer den primære vekten av sekken. I tillegg er overkroppsmuskulaturen viktig i å kunne stabilisere overkroppen med oppakning under marsj. Nyere orginal studier støtter denne konklusjonen og viser at 12 uker overkroppsstyrke predikerer prestasjonen med oppakning [Terho et al., 2018].
+En interessant observasjon fra den systematiske oversiktsartikkelen til @knapik_2012, var at overkroppsstyrketrening sammen med aerob trening var bortimot like effektivt som både over- og underkroppsstyrke (+aerob trening) i å forbedre marsj prestasjon med oppakning. Selv om hoftenbeltet tar ~ 30% av oppakningsvekten, er det overkroppsmuskulaturen som belastes og bærer den primære vekten av sekken. I tillegg er overkroppsmuskulaturen viktig i å kunne stabilisere overkroppen med oppakning under marsj. Nyere orginal studier støtter denne konklusjonen og viser at 12 uker overkroppsstyrke predikerer prestasjonen med oppakning [Terho et al., 2018].
 
 
 
@@ -169,9 +167,22 @@ readxl::read_excel("./data/load_carriage.xlsx") |>
 
 ## Graving
 
+## Intensitet under forflyttning
+### BORG anstrengelsesskala
+
+- 11 på Borg for arbeid over tid tilsvarer under 50% av Vo2max.
+
+
+## Forflyttnings analyse
+- Vurder terreng - hvilket utstyr er optimalt
+    - Skotøy - raskere inn i posisjon annet fottøy?
+
+
+
 ## Tester og evaluering
 
 Prestasjon i tester som infanteriløp og pakningsløp fungerer er indikatorer på soldatens fysiske kapasitet til forflytning med oppakning. Dette gir et relevant mål på kandidatens funksjonsevne under operative forhold for hvordan soldaten kan klare å forlytte seg med oppakning.
+
 
 
 ### For ytterligere lesning

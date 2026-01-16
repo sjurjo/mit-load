@@ -1,24 +1,24 @@
 ---
 title: "Forflytning med oppakning"
 author: "Sjur Fortun Øfsteng"
-#date: last-modified
+#date: 
 biblio-style: apalike
 description: Denne læringsmodulen gir deg en innføring i hvordan forflyttning med oppakning påvirker din fysiologi og militære prestasjon
 fontsize: 11pt
 github-repo: sjurjo/mit-load
-cover-image: resources/marsj.jpg
+#cover-image: resources/marsj.jpg
 #bibliography: 
 
 ---
 
 # Introduksjon
 
-Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvilket terreng du beveger deg i og høydemeter vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018]. Derfor er det viktig å ha noen forkunnskaper omkring forflytnings arbeidskravet slik at du som soldat kan forbrede deg best mulig med hensikt i å optimalisere din operative evne over tid.
+Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvilket terreng du beveger deg i og høydemeter vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018]. Derfor er det viktig å ha noen forkunnskaper omkring forflytnings arbeidskravet slik at du som soldat kan forbrede deg best mulig med hensikt i å optimalisere din operative stridsevne over tid.
 
-
+![](./resources/marsj.jpg)
 
 # Læringssti
 
-Under fanen *Forflytning* har
+- Under fanen *Forflytning* beskrives krav til fysisk form i noen av de militære oppgavene.
 
-Under fanen *Data Visulaisering* har jeg lagt lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje eksempel.
+- Under fanen *Data Visualisering* har jeg lagt lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje eksempel.
