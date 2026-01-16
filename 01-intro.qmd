@@ -6,6 +6,8 @@ editor_options:
 
 # Physical Employment Standards
 
+## Test git status
+
 ## Krav til fysisk form i militære arbeidsoppgaver
 
 Majoriteten av internasjonale forsvarsgrener har implementert eller utviklet en *Physical Employment Standards* (PES). Disse standardene er utformet for å reflektere de typiske jobbspesifikke kravene i militære stillinger og er basert på en analyse av de fysiske og mentale belastningene soldaten vil møte i sin operative rolle [@drain_2019; @nato_2019]. De aller fleste militære stillinger stiller krav til fysisk kapasitet. Fysisk kapasitet er soldatens fundament og er en av de grunnleggende soldat ferdighetene. Men graden av fysisk kapasitet, over et visst grunnnivå, kan variere avhengig av soldatens funksjon (stilling) og oppdrag.  
