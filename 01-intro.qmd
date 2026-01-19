@@ -42,7 +42,7 @@ Militært personell stilles ofte overfor krav som innebærer både tunge løft o
 
 [ENDRE setningsoppbyggning:] Som følge av at kravet til soldatens fysisk form og for å imøtekomme den økt fysisk belastning ved en eventuell deployering, øker også energiomsetningen som en konsekvens av å forlytte seg med økt vekt bæring på kropp (i.e oppakninger 2-4 linje). Forflytning til fots med oppakning i tillegg til å flytte sin egen kroppsvekt er med på å øke energikravet betydelig. Data fra feltøvelser, hvor marsj med oppakning er en stor del av øvelsesaktiviteten, viser at energiomsetningen kan komme opp mellom $\sim$ 3100-6300 kcal og $\sim$ 2300-5500 kcal per døgn hos hhv. mannlige og kvinnelige soldater [@tharion_2005;murphy_2018].
 
-Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (@fig-energydef). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne [@montain_2003;@nindl_2007;@ojanen_2018]. I forhold til forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I @fig-energydef illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser ($\blacktriangledown$) og under deployering ($\bullet$).
+Har soldaten en stor energiomsetning over en periode i forbindelse med felt eller reelle operasjoner, samtidig hvor energiinntaket ikke er tilstrekkelig i forhold til energiforbruket øker risikoen for daglig energiunderskudd (@fig-energydef). Noe som kan påvirke soldaten negativt i form av redusert fysisk og mentalt prestasjonsevne [@montain_2003;@nindl_2007;@ojanen_2018]. I forhold til forflyttning vil energiunderskuddet påvirke soldatens evne til å forflytte seg bl.a effektivit og tilbakelagt distanse per dag. I @fig-energydef illustreres det hvor stort det daglige energiunderskudded kan være målt under feltøvelser ($\blacktriangledown$) og under deployering ($\bullet$).
 
 
 
@@ -68,9 +68,36 @@ my_plot_ggplot
 
 ## Oppakning under forflyttning (marsj)
 
-I tillegg til økt energiomsettning, vil forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av størrelsen på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av påvirkningen av disse faktorene, øker det kravet til hjerte-kar systemet, metabolismen og det nevromuskulæresystemet [@knapik_2004].
-Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning []. 
+I tillegg til økt energiomsettning, vil forflyttning med oppakning påvirker kroppen fysisk og fysiolgisk på flere måter. Dette påvirkers av vekten på oppakningen, fordelingen av vekten på kropp, terrenget soldaten beveger seg i (underlag, stigninger), marsj hastighet. Avhengig av hvor stor grad hver av disse faktorene påvirker, øker det *kravet* til hjerte-kar systemet, metabolismen og det nevromuskulæresystemet [@knapik_2004]. Tidligere studier har vist assosiasjon mellom marsj med oppakning og aerob, muskelkapasitet og kroppssammensetning. $\text{VO2}_{\text{{max}}$ i både absolutt og relativt tall har vist sammenheng med prestasjon i å marsjere med både tung (20-45 kg) [@fallowfield_2012;@terho_2018] og lettere (15-25kg) [@lyons_2005] oppakning. I muskelstyrke har det blitt observert assosiasjon mellom soldatens maksimale-og utholdendestyrke og prestasjon i marsj med oppakning (15-25 kg) [@rayson_2000]. Videre har den maksimal styrken i overkroppen vist en sterk og positiv sammenheng med marsj prestasjon med både moderat (29 kg) og tung (45 kg) oppakning, hvor den utholdende- og masksstyrken i beina ikke viste denne sammenhengen [@terho_2018]. 
 
+Oppsummert gir litteraturen en tydelig indikasjon at å forbedre din maksimale styrke og utholdenhet kapasitet vil det forbedre din prestasjon og forflyttningsevne med oppakning. Det bør også legges vekt på å utvikle overkroppsstyrken, særlig hvis overkroppsstyrken i utgangspunktet er "lav" (relativt til bein), da dette kan påvirke hvordan soldatens arbeidsøkonomi ved å bl.a. forbedre overkroppsstabiliteten. Treningsprogram bestående av både styrke og utholdenhet sammen med jevnling marsjtrening med oppakning oppnås størst fremgang i soldatens marsjprestasjon.
+
+
+Anbefalinger som kan bidra til å forbedre din marsj med oppakning prestasjon (oppsummert i @vaara_2022):
+
+
+
+Styrke- og utholdenhetstrening bør prioriteres som grunnleggende komponenter i treningsprogrammer for soldater, da dette legger et solid grunnlag for din marsjprestasjon. Marsjtrening bør utgjøre regelmessig del av treningsprogrammet og bør planlegges gjennom periodisering for å optimere både tilpasning og restitusjon. Samtidig bør totalvolumet av marsjtrening begrenses for å redusere skaderisikoen, da stort volum av marsj kan øke skaderrisikoen [@schuh-renner_2017]. Anbefalingene understreker belastningstyring ved å kontrollere treningsvolum, inkludere styrke og utholdenhet 
+
+
+Anbefalingen understreker behovet for balansert programdesign som integrerer progresjon, belastningsstyring og tilstrekkelig hvile for å oppnå langsiktige prestasjonsgevinster og helse.
+
+
+
+
+- Styrke og utholdenhetstrening bør prioriteres 
+- Marsj trening bør være en naturlig del av treningsprogrammet, men periodiser
+- Men treningsvolumet av marsjtrening bør ikke være for stort da det øker risikoen for skader hos soldater [@schuh-renner_2017]
+
+
+
+Styrke- og utholdenhetstrening bør prioriteres som grunnleggende komponenter i treningsprogrammer for soldater.
+
+Marsjtrening bør være en naturlig og regelmessig del av treningsprogrammet, og den bør periodiseres for å optimere tilpasning og restitusjon.
+
+Likevel bør totalvolumet av marsjtrening begrenses for å redusere skaderisiko, i tråd med eksisterende evidens som viser økt skaderisiko ved høy marsjvolum [@schuh-renner_2017].
+
+Utform en periodisert plan som balanserer marsjvolumer med styrke- og utholdenhetstrening over relevante treningsfaser.
 
 
 En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sekk, vest, våpen ect) på kropp under forflyttning [].
@@ -80,21 +107,23 @@ En essensiell fysisk krevende arbeidskrav for soldaten er bæring av utstyr (sek
   - Anbefalinger for hvor mye oppakningen burde veie har vært fra 20-45% av egen kroppsvekt, men stilling, oppdrag og fysisk form bør tas hensyn til [REF].
 
 
-Research shows that locating the load center of mass as close as possible to the body center of mass results in the lowest energy cost and tends to keep the body in an up right position similar to unloaded walking. Loads carried on other parts of the body result in higher energy expenditures: each kilogram added to the foot increases en ergy expenditure 7% to 10%; each kilogram added to the thigh increases energy expenditure 4%. Hip belts on rucksacks should be used whenever possible as they reduce pressure on the shoulders and increase comfort. Low or mid-back load placement might be preferable on uneven terrain but high load placement may be best for even terrain.
+
 
 
 ## Faktorer som påvirker forlyttning
 
 ### Plassering av vekt.
 
-Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforbruket ved gange. Enkelt forklart er det mest energiøkonomiske å plassere vekten tett på kroppen massetyngdepunkt [@legg_1985].
+Research shows that locating the load center of mass as close as possible to the body center of mass results in the lowest energy cost and tends to keep the body in an up right position similar to unloaded walking. Loads carried on other parts of the body result in higher energy expenditures: each kilogram added to the foot increases en ergy expenditure 7% to 10%; each kilogram added to the thigh increases energy expenditure 4%. Hip belts on rucksacks should be used whenever possible as they reduce pressure on the shoulders and increase comfort. Low or mid-back load placement might be preferable on uneven terrain but high load placement may be best for even terrain.
+
+Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforbruket ved gange. Enkelt forklart er det mest energiøkonomiske å plassere vekten tett på kroppens massetyngdepunkt [@legg_1985].
 
 
 ## Optimalisere forflyttning med oppakning
 
 ### Treningsstudier
 
-Det er gjennomført utallige studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (*Harman et al., 1997, 2008, Williams et al., 1999,2002*). Det å inkludere mer spesifikk trening bidrar til å fobedre din prestasjonsevne i å marsjere med oppakning når det sammenlignes med bare å fokusere på en av modalitetene (styrke/utholdenhet). Dette kan da relateres til spesifistets prinsippet. Spesifistet prinsippet sier man må trene på det man skal bli god på eller omformulert til hva som sies i forsvaret *train as you will fight*. Repeterte bevegelsesmønster i en gitt arbeidsoppgave (i.e. Load Carriage), gjør at det neuromuskulære systemet primes for den spesifikke arbeidsbevegelsen. Denne primingen av det neurmuskulære systemet kan bidra til å bedre opprettholde kraftutviklingen. Marsj med oppakning vil dermed bli relativt lettere å gjennomføre med soldatens optimilaiserte bevegelsesmønster [@knapik_2012; @vaara_2022]. Videre kan gjentatte gjennomføringer/treninger med oppakning også redusere skaderisikoen.
+Det er gjennomført flere studier hvor det er målt prestasjonsevne med oppakning (se @fig-loadstudies). Treningsintervensjonene har typsik bestått av styrke eller utholdenhetstrening, samtidig styrke-og utholdenhetstrening (concurrent), concurrent + spesifikk marsj med oppakning, samt fokus på over- og/eller underkropp. Sett under ett, er det gode effekter på både styrke og utholdenhetstrening, men å inkludere progressive "load-carraige trening som en del av treningsprogrammet, ble det observert mye større treningseffekter (*Harman et al., 1997, 2008, Williams et al., 1999,2002*). Det å inkludere mer spesifikk trening bidrar til å fobedre din prestasjonsevne i å marsjere med oppakning når det sammenlignes med bare å fokusere på en av modalitetene (styrke/utholdenhet). Dette kan da relateres til spesifistets prinsippet. Spesifistet prinsippet sier man må trene på det man skal bli god på eller omformulert til hva som sies i forsvaret *train as you will fight*. Repeterte bevegelsesmønster i en gitt arbeidsoppgave (i.e. Load Carriage), gjør at det neuromuskulære systemet primes for den spesifikke arbeidsbevegelsen. Denne primingen av det neurmuskulære systemet kan bidra til å bedre opprettholde kraftutviklingen. Marsj med oppakning vil dermed bli relativt lettere å gjennomføre med soldatens optimilaiserte bevegelsesmønster [@knapik_2012; @vaara_2022]. Videre kan gjentatte gjennomføringer/treninger med oppakning også redusere skaderisikoen.
 
 En interessant observasjon fra den systematiske oversiktsartikkelen til @knapik_2012, var at overkroppsstyrketrening sammen med aerob trening var bortimot like effektivt som både over- og underkroppsstyrke (+aerob trening) i å forbedre marsj prestasjon med oppakning. Selv om hoftenbeltet tar ~ 30% av oppakningsvekten, er det overkroppsmuskulaturen som belastes og bærer den primære vekten av sekken. I tillegg er overkroppsmuskulaturen viktig i å kunne stabilisere overkroppen med oppakning under marsj. Nyere orginal studier støtter denne konklusjonen og viser at 12 uker overkroppsstyrke predikerer prestasjonen med oppakning [Terho et al., 2018].
 
