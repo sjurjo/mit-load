@@ -313,6 +313,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
+      <img src="./resources\CISK.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="./resources\CISK.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Forflyttning med oppakning</a> 
@@ -373,7 +375,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./99-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referanser</span></a>
   </div>
 </li>
     </ul>
@@ -386,7 +388,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#eksempel-på-forflytning-med-ulik-oppakningd" id="toc-eksempel-på-forflytning-med-ulik-oppakningd" class="nav-link active" data-scroll-target="#eksempel-på-forflytning-med-ulik-oppakningd"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakningd</a></li>
+  <li><a href="#eksempel-på-forflytning-med-ulik-oppakning" id="toc-eksempel-på-forflytning-med-ulik-oppakning" class="nav-link active" data-scroll-target="#eksempel-på-forflytning-med-ulik-oppakning"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakning</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sjurjo/mit-load/edit/master/02-data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sjurjo/mit-load/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/sjurjo/mit-load/blob/master/02-data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -413,13 +415,10 @@ window.Quarto = {
 </header>
 
 
-<section id="eksempel-på-forflytning-med-ulik-oppakningd" class="level2 page-columns page-full" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="eksempel-på-forflytning-med-ulik-oppakningd"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakningd</h2>
-<p>For å finne ut hvor mye oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier.</p>
-<ul>
-<li><p>Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.</p></li>
-<li><p>Pandolf’s formel: energiforbruk ved forlfytning med oppakning er kalkulert med folgende formel:</p></li>
-</ul>
+<section id="eksempel-på-forflytning-med-ulik-oppakning" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="eksempel-på-forflytning-med-ulik-oppakning"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakning</h2>
+<p>For å finne ut hvor mye marsj med oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier. Pandolf’s formel blir ofte brukt til å kalkulere energiforbruket ved forlfytning med oppakning og har følgende formel:</p>
+<!--- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.-->
 <p><span class="math display">\[M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)\]</span></p>
 <p>hvor <span class="math inline">\(\text{M}_w\)</span> = energi kostnad ved marsjering (watt), <span class="math inline">\(\text{W}\)</span> = kroppsvekt i kg, <span class="math inline">\(\text{L}\)</span> = oppakning i kg, <span class="math inline">\(\text{T}\)</span> = terreng faktor, <span class="math inline">\(\text{V}\)</span> = hastighet/marsj hastighet (m/s), <span class="math inline">\(\text{G}\)</span> = grader/helning i %.</p>
 <p>I <a href="#tbl-energi" class="quarto-xref">Table&nbsp;<span>3.2</span></a> har jeg lagt inn personer (ID) med ulik kroppsvekt og oppakning. Terreng faktor, hastighet og helning er konstante mellom personene.</p>
@@ -501,7 +500,7 @@ Table&nbsp;3.1: Tabell med variabler for utregning av energiforbruk
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> <sup>a</sup>Terreng faktor: 1.1 corresponding to <em>dirt road</em> on a weighting scale that goes from 1.0 for the black topping road to 4.1 for soft snow of 35 cm <span class="citation" data-cites="colosio_2018">(<a href="99-refs.html#ref-colosio_2018" role="doc-biblioref">Colosio and Pogliaghi 2018</a>)</span>.</p>
+<p><strong>Note:</strong> <sup>a</sup>Terreng faktor: 1.1 samsvarer med grusvei på en skala som går fra 1.0, som er asfalt, til 4.1 som tilsvarer 35 cm løs snø <span class="citation" data-cites="colosio_2018">(<a href="99-refs.html#ref-colosio_2018" role="doc-biblioref">Colosio and Pogliaghi 2018</a>)</span>.</p>
 <div class="no-row-height column-margin column-container"><div id="ref-colosio_2018" class="csl-entry" role="listitem">
 Colosio, Alessandro L, and S Pogliaghi. 2018. <span>“Quantification of Energy Expenditure of Military Loaded Runs: What Is the Performance of Laboratory-Based Equations When Applied to the Field Environment?”</span> <em>Journal of the Royal Army Medical Corps</em> 164 (4): 253–58. <a href="https://doi.org/10.1136/jramc-2017-000887">https://doi.org/10.1136/jramc-2017-000887</a>.
 </div></div></div>
@@ -613,7 +612,7 @@ Table&nbsp;3.2: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
 </div>
 <ul>
 <li>MEN, hva skjer når vi kontrollerer for personers kroppsvekt?</li>
-<li>Hvem bruker mest energi med å forflytte seg med oppakning? Hvem forbruker mest energi med å forflytte seg egentlig?</li>
+<li>Hvem forbruker mest energi med å forflytte seg egentlig?</li>
 </ul>
 <p>I <a href="#tbl-energi2" class="quarto-xref">Table&nbsp;<span>3.3</span></a> har jeg lagt inn kroppsvekt og kontrollert for dette i utregningen.</p>
 <div class="cell">
@@ -718,7 +717,7 @@ Table&nbsp;3.3: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
 </div>
 <p>I <a href="#tbl-energi3" class="quarto-xref">Table&nbsp;<span>3.4</span></a> er energiforbruk per time kalkulert.</p>
 <ul>
-<li>Hvordan burde man disponere oppakningen laget for å optimalisere stridsevne for hele laget?</li>
+<li>Hvordan burde man disponere oppakningen i laget for å optimalisere stridsevnen for hele laget gitt energiforbruket mellom personene i tabellen?</li>
 </ul>
 <div class="cell">
 <div id="tbl-energi3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
@@ -1230,8 +1229,8 @@ Table&nbsp;3.4: Energiforbruk ved ulik kroppsvekt og kilo oppakning.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./99-refs.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./99-refs.html" class="pagination-link" aria-label="Referanser">
+        <span class="nav-page-text">Referanser</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
