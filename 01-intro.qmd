@@ -137,14 +137,14 @@ readxl::read_excel("./data/load_carriage.xlsx") |>
 
 
 
-## To viktige faktorer som påvirker energiforbrukt ved forlyttning
+## To viktige faktorer som påvirker energiforbruket ved forlyttning
 
 ### Plassering av vekt i sekken og Intensitet under forflyttning.
 
 Hvor du plasserer vekten i sekken vil også påvirke arbeidskravet og energiforbruket ved gange. Enkelt forklart er det mest energiøkonomiske å plassere vekten tett på kroppens massetyngdepunkt [@legg_1985]. Har du en dagsmarsj i flatt terreng vil det være hensiktsmessig å plassere vekten tett på midtryggen. Beveger soldaten seg i mer oppoverbakker eller variert lende, kan det være en fordel å plassere vekten mer i bunnen av sekken. 
 
 En annen faktor som spiller inn på din marsjprestasjon er intensiteten under marsj. Under lengrevarende marsj anbefaler studier at intensiteten ikke bør overstige $\sim 45-47 \%\ \text{VO2}_\text{max}$. Er marsj intensiteten over denne terskelen, som en konsekvens av økende marsjhastighet og/eller oppakning, øker energifobruket i et mye større omfang. Konsekvensen er at trøtthet/fatigue inntreffer på et tidligere tidspunkt [@boffey_2019]. Dette illustreres i @fig-loadspeed, hvor man etter å ha passert $\sim 47\% \text{VO2}_\text{max}$ øker O2 kravet (y-aksen) betraktelig (nesten eksponentielt) i forhold til økende intensitet (x-aksen) .
-For å holde en intensitet som er i underkant av denne terskelen kan en tommelfingerregel være å holde seg primært rundt 11-12 på Borg-skala ([Borg skala](https://activeeducation.no/blogg/trening/borg-skala/)). Videre vil utholddenhetstrening hvor $\text{VO2}_\text{max}$ økes, gjøre at din marsj hastighet tilsvarende $\sim 47 \%\ \text{VO2}_\text{max}$ sannsynligvis blir forbedret.
+For å holde en intensitet som er i underkant av denne terskelen kan en tommelfingerregel være å holde seg primært rundt 11 på Borg-skala ([Borg skala](https://activeeducation.no/blogg/trening/borg-skala/)). Videre vil utholddenhetstrening hvor $\text{VO2}_\text{max}$ økes, gjøre at din marsj hastighet tilsvarende $\sim 47 \%\ \text{VO2}_\text{max}$ sannsynligvis blir forbedret.
 
 ```{r}
 #| label: fig-loadspeed
