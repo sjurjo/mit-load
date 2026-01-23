@@ -6,8 +6,8 @@ color:
   foreground: dark-grey
   primary: black
 
-#logo: 
-  #medium: resources/CISK.png
+logo: 
+  medium: resources/CISK.png
 
 typography:
   fonts:

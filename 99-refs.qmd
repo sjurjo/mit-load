@@ -1,6 +1,6 @@
 
 
-# References {.unnumbered}
+# Referanser {.unnumbered}
 
 ::: {#refs}
 

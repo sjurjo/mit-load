@@ -15,10 +15,10 @@ github-repo: sjurjo/mit-load
 
 Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhandler forlyttning med oppakning. Dette vil gi deg kunnskap i hvordan oppakning vil påvirke din fysiologi og videre fysiske prestasjonsevne. Endring i antall kg oppakning, hvilket terreng du beveger deg i og høydemeter vil påvirke ditt energiforbruk og videre din fysiske prestasjon over tid [@colosio_2018]. Derfor er det viktig å ha noen forkunnskaper omkring forflytnings arbeidskravet slik at du som soldat kan forbrede deg best mulig med hensikt i å optimalisere din operative stridsevne over tid.
 
-![](./resources/marsj.jpg)
+![Bilde: www.forsvaret.no](./resources/marsj.jpg)
 
 # Læringssti
 
-- Under fanen *Forflytning* beskrives krav til fysisk form i noen av de militære oppgavene.
+- Under fanen *Forflytning* beskrives krav til fysisk form og teori omkring dette.
 
-- Under fanen *Data Visualisering* har jeg lagt lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje eksempel.
+- Under fanen *Data Visualisering* har jeg lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje for ulike personer.

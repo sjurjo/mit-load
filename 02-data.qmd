@@ -7,17 +7,11 @@ editor_options:
 
 # Energiforbruk
 
-## Eksempel på forflytning med ulik oppakningd
+## Eksempel på forflytning med ulik oppakning
 
-For å finne ut hvor mye oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier. 
+For å finne ut hvor mye marsj med oppakning koster i energiforbruk finnes det formler som er basert på tester som er gjort i laboratorier. Pandolf's formel blir ofte brukt til å kalkulere energiforbruket ved forlfytning med oppakning og har følgende formel:
 
-
-- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.
-
-
-
-- Pandolf's formel: energiforbruk ved forlfytning med oppakning er kalkulert med folgende formel:
-
+<!--- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.-->
 
 $$M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)$$
 
@@ -52,7 +46,7 @@ kableExtra::kable(df,
                                 'Helning')) |> 
     kableExtra::add_footnote(
     escape = FALSE,
-    label = "Terreng faktor: 1.1 corresponding to *dirt road* on a weighting scale that goes from 1.0 for the black topping road to 4.1 for soft snow of 35 cm [@colosio_2018].",
+    label = "Terreng faktor: 1.1 samsvarer med grusvei på en skala som går fra 1.0, som er asfalt, til 4.1 som tilsvarer 35 cm løs snø [@colosio_2018].",
 notation = "alphabet",
 threeparttable = FALSE)
 ```
@@ -148,7 +142,7 @@ threeparttable = TRUE
 ```
 
 - MEN, hva skjer når vi kontrollerer for personers kroppsvekt?
-- Hvem bruker mest energi med å forflytte seg med oppakning? Hvem forbruker mest energi med å forflytte seg egentlig?
+- Hvem forbruker mest energi med å forflytte seg egentlig?
 
 I @tbl-energi2 har jeg lagt inn kroppsvekt og kontrollert for dette i utregningen.
 
@@ -281,7 +275,7 @@ threeparttable = TRUE
 
 I @tbl-energi3 er energiforbruk per time kalkulert.
 
-- Hvordan burde man disponere oppakningen laget for å optimalisere stridsevne for hele laget?
+- Hvordan burde man disponere oppakningen i laget for å optimalisere stridsevnen for hele laget gitt energiforbruket mellom personene i tabellen?
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 #| label: tbl-energi3
