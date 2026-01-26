@@ -9,7 +9,7 @@ book:
   search: true
   repo-url: https://github.com/sjurjo/mit-load
   repo-branch: master
-  repo-actions: [edit, issue, source]
+  #repo-actions: [edit, issue, source]
   downloads: [epub]
   chapters:
   - index.qmd
@@ -34,6 +34,12 @@ format:
       dark: darkly
     css: styles.css
     toc: true
+    toc-location: right
+    code-tools:
+      source: true
+      toggle: false
+      caption: none
+code-block-bg: true
 code-block-border-left: "#31BAE9"
 highlight-style: atom-one
    

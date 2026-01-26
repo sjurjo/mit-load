@@ -29,3 +29,30 @@ a {
   text-decoration: underline;
   font-weight: 500;
 }
+
+
+/* Change TOC text color */
+#TOC, nav#TOC, .toc {
+    color: ##222222 !important; /* Blue text */
+    font-weight: 500;
+}
+
+/* Change TOC links color */
+#TOC a, nav#TOC a, .toc a {
+    color: #222222 !important; /* Blue links */
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Change TOC links on hover */
+#TOC a:hover, nav#TOC a:hover, .toc a:hover {
+    color: #222222 !important; /* Red on hover */
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* Optional: Change TOC heading color */
+#TOC h2, nav#TOC h2, .toc h2 {
+    color: #222222 !important;
+    font-weight: none;
+}
