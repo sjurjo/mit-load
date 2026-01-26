@@ -9,15 +9,15 @@ editor_options:
 
 ## Eksempel på forflytning med ulik oppakning
 
-For å finne ut hvor mye marsj med oppakning koster i energi finnes det formler som er utarbeidet med bakgrunn i laboratorietester. Pandolf's formel blir ofte brukt til å kalkulere energiforbruket ved forflytning med oppakning og har følgende formel:
+For å finne ut hvor mye marsj med oppakning koster i energi finnes det formler som er utarbeidet med bakgrunn i laboratorietester. Pandolf's formel blir ofte brukt til å kalkulere energiforbruket $M_w$ (i watt) ved forflytning med oppakning og har følgende formel:
 
 <!--- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.-->
 
-$$M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)$$
+$$M_w = 1.5 W\ +\ 2.0(W + L) (L/W)^2\ +\ T(W + L)(1.5  V^2 + 0.35VG)$$
 
-hvor $\text{M}_w$ = energi kostnad ved marsjering (watt), $\text{W}$ = kroppsvekt i kg, $\text{L}$ = oppakning i kg, $\text{T}$ = terreng faktor, $\text{V}$ = hastighet/marsj hastighet (m/s), $\text{G}$ = grader/helning i %.  
+hvor $W$ er kroppsvekt i kg, $L$ er oppakning i kg, $T$ er terreng faktor, $V$ er hastighet/marsj hastighet (m/s), $G$ = grader/helning i %.  
   
-I @tbl-energi har jeg lagt inn personer (ID) med ulik kroppsvekt og oppakning. Terreng faktor, hastighet og helning er konstante mellom personene.
+I @tbl-energi har jeg lagt inn tre personer (ID) med ulik kroppsvekt og to ulike oppakninger. Terreng faktor, hastighet og helning er konstante mellom personene i disse eksemplene.
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}

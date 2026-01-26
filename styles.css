@@ -1,0 +1,33 @@
+.citation a {
+  color: #2b6cb0;
+  font-weight: 500;
+  border-bottom: 1px dotted #bbb;
+}
+
+.citation {
+  color: #2b6cb0;
+  font-weight: 500;
+  border-bottom: 1px dotted #bbb;
+}
+
+/* Reference list stays normal */
+#refs a {
+  color: #2b6cb0;
+}
+
+/* All Quarto cross-references */
+a.quarto-xref {
+  font-weight: 500;
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+/* url links */
+
+a {
+  color: #2b6cb0;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+
