@@ -10,7 +10,7 @@ book:
   repo-url: https://github.com/sjurjo/mit-load
   repo-branch: master
   #repo-actions: [edit, issue, source]
-  downloads: [epub]
+  #downloads: [epub]
   chapters:
   - index.qmd
   - part: "Forflytning"
