@@ -29,9 +29,9 @@ format:
     reference-location: margin
     citation-location: margin
     footnotes-hover: false
-    theme:
-      light: flatly
-      dark: darkly
+    #theme:
+    #  light: flatly
+    #  dark: darkly
     css: styles.css
     toc: true
     toc-location: right
