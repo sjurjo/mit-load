@@ -59,14 +59,14 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a14e345711173c227b21482e2eb4cc70.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6d7e0e055978adcb0dc3bbe98a6d8351.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a14e345711173c227b21482e2eb4cc70.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9a829fc22ad631a23366cb62cf7abf7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-90847f3a5739ee6e329bd22687b9eabc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-9a829fc22ad631a23366cb62cf7abf7e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fd0530e27bc726b4b569a7546bc3ebf2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-88c74e65af0352e96917e41366658e1e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-fd0530e27bc726b4b569a7546bc3ebf2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,6 +125,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -417,11 +418,11 @@ window.Quarto = {
 
 <section id="eksempel-på-forflytning-med-ulik-oppakning" class="level2 page-columns page-full" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="eksempel-på-forflytning-med-ulik-oppakning"><span class="header-section-number">3.1</span> Eksempel på forflytning med ulik oppakning</h2>
-<p>For å finne ut hvor mye marsj med oppakning koster i energi finnes det formler som er utarbeidet med bakgrunn i laboratorietester. Pandolf’s formel blir ofte brukt til å kalkulere energiforbruket ved forflytning med oppakning og har følgende formel:</p>
+<p>For å finne ut hvor mye marsj med oppakning koster i energi finnes det formler som er utarbeidet med bakgrunn i laboratorietester. Pandolf’s formel blir ofte brukt til å kalkulere energiforbruket <span class="math inline">\(M_w\)</span> (i watt) ved forflytning med oppakning og har følgende formel:</p>
 <!--- Men vi har ikke kontroll på arbeidsøkonomi, utnyttingsgrad ect, dermed er ikke utregning helt presis, men den gir oss en god indikasjon hvordan oppakning påvirker ulike personer i forhold til kroppsvekt og ulik oppakning.-->
-<p><span class="math display">\[M_w = 1.5\ •\ W\ +\ 2.0\ •\ (W + L)\ •\ (L/W)^2\ +\ T\ •\ (W + L)\ •\ (1.5 • V^2 + 0.35\ •\ V\ •\ G)\]</span></p>
-<p>hvor <span class="math inline">\(\text{M}_w\)</span> = energi kostnad ved marsjering (watt), <span class="math inline">\(\text{W}\)</span> = kroppsvekt i kg, <span class="math inline">\(\text{L}\)</span> = oppakning i kg, <span class="math inline">\(\text{T}\)</span> = terreng faktor, <span class="math inline">\(\text{V}\)</span> = hastighet/marsj hastighet (m/s), <span class="math inline">\(\text{G}\)</span> = grader/helning i %.</p>
-<p>I <a href="#tbl-energi" class="quarto-xref">Table&nbsp;<span>3.2</span></a> har jeg lagt inn personer (ID) med ulik kroppsvekt og oppakning. Terreng faktor, hastighet og helning er konstante mellom personene.</p>
+<p><span class="math display">\[M_w = 1.5 W\ +\ 2.0(W + L) (L/W)^2\ +\ T(W + L)(1.5  V^2 + 0.35VG)\]</span></p>
+<p>hvor <span class="math inline">\(W\)</span> er kroppsvekt i kg, <span class="math inline">\(L\)</span> er oppakning i kg, <span class="math inline">\(T\)</span> er terreng faktor, <span class="math inline">\(V\)</span> er hastighet/marsj hastighet (m/s), <span class="math inline">\(G\)</span> = grader/helning i %.</p>
+<p>I <a href="#tbl-energi" class="quarto-xref">Table&nbsp;<span>3.2</span></a> har jeg lagt inn tre personer (ID) med ulik kroppsvekt og to ulike oppakninger. Terreng faktor, hastighet og helning er konstante mellom personene i disse eksemplene.</p>
 <div class="cell page-columns page-full">
 <div id="tbl-data" class="cell quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-tbl figure page-columns page-full">
