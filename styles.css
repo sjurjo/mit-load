@@ -1,13 +1,10 @@
 .citation a {
   color: #222222;
-  font-weight: 500;
-  border-bottom: 1px dotted #bbb;
-}
+  font-weight: 500;}
 
 .citation {
   color: #222222;
   font-weight: 500;
-  border-bottom: 1px dotted #bbb;
 }
 
 /* Reference list stays normal */
