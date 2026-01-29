@@ -23,7 +23,7 @@ Denne korte modulen er ment for å gi deg et innblikk i arbeidskravet som omhand
 
 - Under fanen *Forflytning* beskrives krav til fysisk form og teori omkring dette.
 
-- Under fanen *Data Visualisering* har jeg lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje for ulike personer.
+- Under fanen *Data Visualisering* har jeg lagt inn et eksempel på energiforbruk ved å forflytte seg med 3 og 4 linje for ulike personer. Her er det også en liten kadett utfordring.
 
 
 

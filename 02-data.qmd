@@ -364,4 +364,5 @@ threeparttable = TRUE
 
 ```
 
+<span style="color:#4758AB;">**Kadett utfordring 😊**</span> Få en oversikt over *ditt* eget energiforbruk under vinterøvelsen/-eller annen marsjtrening. Legg inn Pandolfs formel i et excel skjema. Plott deretter inn din egen kroppsvekt og lek rundt med faktorene for kg oppakning, terreng og helning. Hvor mye energi kan du forvente å bruke på en 6 timers skimarsj? Hvordan vil du imøtekomme dette energikravet for å optimalisere din stridsevne?
 
